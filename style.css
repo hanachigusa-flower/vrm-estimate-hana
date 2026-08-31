@@ -243,73 +243,12 @@ h3 {
   border: 1px solid #eee;
 }
 
-/* --- 📋 ご依頼テンプレート＆お取引の流れ --- */
-.template-box {
-  background: #fff0f3;
-  border: 1.5px solid #ffb6c1;
-  border-radius: 10px;
-  padding: 14px 16px;
-  margin-bottom: 15px;
-}
-.template-box h3 {
-  margin-top: 0;
-  color: #d64550;
-  font-size: 0.92rem;
-}
-.template-box p {
-  margin: 0;
-  font-size: 0.85rem;
-  white-space: pre-wrap;
-  color: #444;
-  line-height: 1.6;
-}
-
-.template-detail-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-  margin-bottom: 15px;
-}
-@media (max-width: 600px) {
-  .template-detail-container {
-    grid-template-columns: 1fr;
-  }
-}
-
-.template-detail-box {
-  background: #faf7f8;
-  border: 1px dashed #ffd1dc;
-  border-radius: 10px;
-  padding: 12px;
-  font-size: 0.83rem;
-  color: #444;
-}
-.template-detail-box h4 {
-  margin: 0 0 6px 0;
-  color: #d64550;
-  font-size: 0.88rem;
-}
-.template-detail-box p {
-  margin: 0;
-  white-space: pre-wrap;
-  line-height: 1.5;
-}
-.note-small {
-  font-size: 0.75rem;
-  color: #777;
-  margin-top: 6px !important;
-}
-
+/* --- 📋 お取引の流れ --- */
 .flow-box {
   background: #ffffff;
   border: 1.5px solid #ffe1e8;
   border-radius: 10px;
   padding: 14px 16px;
-}
-.flow-box h3 {
-  margin-top: 0;
-  color: #d64550;
-  font-size: 0.92rem;
 }
 .flow-box ol {
   margin: 0 0 10px 0;
@@ -328,9 +267,77 @@ h3 {
   margin-top: 8px;
 }
 
-/* --- 📝 お見積もりフォーム --- */
+/* --- 📝 フォーム入力フィールド関連 --- */
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 22px;
+}
+
+.input-row {
+  margin-bottom: 12px;
+}
+.input-row label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 4px;
+}
+
+.text-input, .select-box {
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1.5px solid #ffd8e1;
+  font-size: 0.9rem;
+  background-color: #fff;
+  box-sizing: border-box;
+  transition: all 0.2s;
+}
+.text-input:focus, .select-box:focus {
+  outline: none;
+  border-color: #ff6b81;
+  box-shadow: 0 0 5px rgba(255, 107, 129, 0.2);
+}
+
+.inline-radios {
+  display: flex;
+  gap: 20px;
+  font-size: 0.9rem;
+  align-items: center;
+  padding: 4px 0;
+}
+.inline-radios label {
+  font-weight: normal;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 0;
+}
+.inline-radios input[type="radio"] {
+  accent-color: #e74c3c;
+  transform: scale(1.1);
+}
+
+/* 🔗 連動する詳細サブボックス */
+.dynamic-detail-section {
+  background: #faf7f8;
+  border: 1.5px dashed #ffd1dc;
+  border-radius: 12px;
+  padding: 16px;
+}
+.set-detail-subbox .subbox-title {
+  font-weight: bold;
+  color: #d64550;
+  font-size: 0.9rem;
+  margin: 0 0 10px 0;
+  border-bottom: 1px dashed #ffa8b6;
+  padding-bottom: 4px;
+}
+.note-small {
+  font-size: 0.78rem;
+  color: #777;
+  margin-top: 6px;
+  line-height: 1.4;
 }
 
 .radio-group, .checkbox-group {
@@ -473,7 +480,7 @@ select, input[type="number"] {
   user-select: none;
 }
 
-/* --- 💖 メインセット＆カード・案内用デザイン 💖 --- */
+/* --- 💖 メインセット＆カードデザイン 💖 --- */
 .set-notice-box {
   background-color: #fff8f9;
   border: 1px dashed #ff8fa3;
@@ -638,4 +645,18 @@ select, input[type="number"] {
   padding: 8px 10px;
   border-radius: 6px;
   border: 1px solid #ffe5eb;
+}
+
+@media (max-width: 480px) {
+  .set-title-price {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
+  .set-title {
+    font-size: 0.9rem;
+  }
+  .set-price {
+    font-size: 0.95rem;
+  }
 }
