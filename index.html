@@ -15,19 +15,58 @@
       <p class="sub-text">3D(VRM)をお持ちの方へ、素敵なお写真をおつくりしています。</p>
     </header>
 
+    <!-- 🎁 セット共通の納品内容カード -->
+    <section class="section package-info">
+      <h2>🎁 全セット共通の納品内容</h2>
+      <p class="package-intro">どのセットを選んでも、**豪華なセット内容**でお届けします！</p>
+      
+      <div class="package-list">
+        <ul>
+          <li>📸 <strong>引きでのお写真：</strong> 1点</li>
+          <li>✨ <strong>アップでのキラキラスチル：</strong> 1点</li>
+          <li>👤 <strong>使用した立ち絵（透過サイズ大きめ）：</strong> 1点</li>
+          <li>😃 <strong>表情差分：</strong> 1点〜2点</li>
+        </ul>
+        <div class="package-total">
+          計4点 ＋ 透過お写真2点 ＝ <strong>【合計 6点納品】</strong>
+        </div>
+      </div>
+      
+      <p class="kodawari-note">
+        💡 <strong>「完全こだわりセット」特典：</strong> ポージングやその他のリテイクを<strong>全体で5回まで</strong>承ります！納得のいく1枚を作りたい方に最適です。
+      </p>
+    </section>
+
+    <!-- 💡 ご依頼例・計算例カード -->
+    <section class="section example-box">
+      <h3>💡 ご依頼・お見積もり例</h3>
+      <div class="example-content">
+        <p class="example-title"><strong>【季節指定ポージングおまかせ ＋ 小物追加の場合】</strong></p>
+        <ul class="example-list">
+          <li>季節かシュチュエーション指定ポージングおまかせセット：<strong>4,000円</strong></li>
+          <li>表情差分1点：<strong>無料（0円）</strong></li>
+          <li>小物を持たせる：<strong>+800円</strong></li>
+        </ul>
+        <p class="example-price">合計：<strong>4,800円 ＋ 税</strong></p>
+        <p class="example-detail">📦 納品データ：お写真（差分含め）4点 ＋ 立ち絵（差分含め）2点 ＝ <strong>計6点納品</strong></p>
+      </div>
+    </section>
+
     <form id="estimateForm">
+      <!-- メインセット選択 -->
       <section class="section">
         <h2>1. メインセット選択（いずれか1つ）</h2>
         <div class="radio-group">
-          <label><input type="radio" name="mainSet" value="3000" checked> 背景持ち込みポージング指定セット (¥3,000〜)</label>
-          <label><input type="radio" name="mainSet" value="4000"> 季節かシュチュエーション指定ポージングおまかせセット (¥4,000〜)</label>
-          <label><input type="radio" name="mainSet" value="2000"> 全部持ち込みお写真馴染ませセット (¥2,000〜)</label>
-          <label><input type="radio" name="mainSet" value="2000"> VRCHATお写真レタッチセット (¥2,000〜)</label>
-          <label><input type="radio" name="mainSet" value="6000"> 完全こだわりセット (¥6,000〜)</label>
+          <label><input type="radio" name="mainSet" value="3000" checked> <strong>背景持ち込みポージング指定セット</strong> (¥3,000〜)</label>
+          <label><input type="radio" name="mainSet" value="4000"> <strong>季節かシュチュエーション指定ポージングおまかせセット</strong> (¥4,000〜)</label>
+          <label><input type="radio" name="mainSet" value="2000"> <strong>全部持ち込みお写真馴染ませセット</strong> (¥2,000〜)</label>
+          <label><input type="radio" name="mainSet" value="2000"> <strong>VRCHATお写真レタッチセット</strong> (¥2,000〜)</label>
+          <label><input type="radio" name="mainSet" value="6000"> <strong>完全こだわりセット</strong> (¥6,000〜)</label>
           <label><input type="radio" name="mainSet" value="0"> セットなし（単品のみ希望）</label>
         </div>
       </section>
 
+      <!-- 単品メニュー -->
       <section class="section">
         <h2>2. 単品メニュー（複数選択可）</h2>
         <div class="checkbox-group">
@@ -39,6 +78,7 @@
         <p class="note">※単品立ち絵の場合、表情差分1点につき +¥500 かかります。</p>
       </section>
 
+      <!-- オプション -->
       <section class="section">
         <h2>3. オプション</h2>
         <div class="checkbox-group">
@@ -56,7 +96,7 @@
         </div>
 
         <div class="select-group">
-          <label for="express">お急ぎ便指定:</label>
+          <label for="express"><strong>お急ぎ便指定:</strong></label>
           <select id="express" class="opt-select">
             <option value="0">なし（通常納期）</option>
             <option value="300">2週間 (+¥300)</option>
@@ -67,19 +107,21 @@
         </div>
 
         <div class="number-group">
-          <label for="charCount">追加キャラクター人数 (+¥2,500/人):</label>
+          <label for="charCount"><strong>追加キャラクター人数 (+¥2,500/人):</strong></label>
           <input type="number" id="charCount" min="0" value="0">
         </div>
       </section>
 
+      <!-- 特典案内 -->
       <section class="section benefit-box">
         <h3>🌟 特典案内</h3>
         <p>リピーター様・SNS等で宣伝いただいた方には特典をお付けしています！（例：Vlog風加工1点、貫通処理サービス等）</p>
         <p class="small">※FANBOX限定などポートフォリオ非公開希望の方は事前にご相談いただくか、「実績非公開」をご選択ください。</p>
       </section>
 
+      <!-- 見積もり結果表示エリア -->
       <div class="result-box">
-        <p>概算見積もり金額</p>
+        <p>概算見積もり金額（税抜）</p>
         <div class="price"><span id="totalPrice">3,000</span> 円〜</div>
       </div>
     </form>
