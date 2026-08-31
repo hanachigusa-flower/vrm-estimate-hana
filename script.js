@@ -50,13 +50,12 @@ document.addEventListener('DOMContentLoaded', function() {
     form.addEventListener('click', calculateTotal);
   }
 
-  // メール作成ボタンの処理（Web版Gmailを起動）
+  // メール作成ボタンの処理
   const sendEmailBtn = document.getElementById('sendEmailBtn');
   if (sendEmailBtn) {
     sendEmailBtn.addEventListener('click', function(e) {
       e.preventDefault();
 
-      // ✉️ ご自身のメールアドレスを設定してください
       const yourEmail = "hana.chigusa@gmail.com"; 
 
       const priceEx = document.getElementById('totalPrice') ? document.getElementById('totalPrice').innerText : "0";
@@ -97,35 +96,57 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // 🔍 画像クリックによる拡大表示（モーダル処理）
+  // 🔍 画像・動画クリックによる拡大表示（モーダル処理）
   const modal = document.getElementById('imageModal');
-  const modalImg = document.getElementById('modalImg');
+  const modalWrapper = modal ? modal.querySelector('.modal-content-wrapper') : null;
   const modalClose = document.getElementById('modalClose');
-  const clickableImages = document.querySelectorAll('.clickable-media');
+  const clickableItems = document.querySelectorAll('.clickable-media');
 
-  clickableImages.forEach(img => {
-    img.addEventListener('click', function() {
-      if (modal && modalImg) {
-        modal.style.display = 'flex';
-        modalImg.src = this.src;
+  clickableItems.forEach(item => {
+    item.addEventListener('click', function() {
+      if (!modal || !modalWrapper) return;
+
+      // 既存のモーダル内コンテンツ（画像・動画）をクリア
+      const oldMedia = modalWrapper.querySelector('img, video');
+      if (oldMedia) oldMedia.remove();
+
+      if (this.tagName.toLowerCase() === 'img') {
+        const img = document.createElement('img');
+        img.src = this.src;
+        img.ondragstart = () => false;
+        modalWrapper.appendChild(img);
+      } else if (this.tagName.toLowerCase() === 'video') {
+        const video = document.createElement('video');
+        video.src = this.querySelector('source') ? this.querySelector('source').src : this.src;
+        video.controls = true;
+        video.autoplay = true;
+        video.loop = true;
+        video.muted = true;
+        video.playsInline = true;
+        video.ondragstart = () => false;
+        modalWrapper.appendChild(video);
       }
+
+      modal.style.display = 'flex';
     });
   });
 
-  if (modalClose) {
-    modalClose.addEventListener('click', function() {
+  // モーダルを閉じる処理
+  function closeModal() {
+    if (modal) {
       modal.style.display = 'none';
-    });
+      const oldMedia = modalWrapper ? modalWrapper.querySelector('img, video') : null;
+      if (oldMedia) oldMedia.remove();
+    }
   }
 
+  if (modalClose) modalClose.addEventListener('click', closeModal);
   if (modal) {
     modal.addEventListener('click', function(e) {
-      if (e.target === modal || e.target === modalImg) {
-        modal.style.display = 'none';
-      }
+      if (e.target === modal) closeModal();
     });
   }
 
-  // 初期計算の実行
+  // 初期計算
   calculateTotal();
 });
