@@ -3,10 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>3D 4K photo ご依頼・お見積もり</title>
+  <title>3D 4K photo ご依頼・お見積もり | 千種はな Portfolio</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    /* 追加画像・動画用の表示スタイル */
+    /* 画像・動画の保存（ダウンロード）防止スタイル */
+    img, video {
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      pointer-events: auto;
+    }
+
+    /* レイアウト・メディア表示用スタイル */
     .header-img {
       width: 100%;
       height: auto;
@@ -20,26 +31,58 @@
       gap: 15px;
       margin-top: 15px;
     }
-    .media-grid img, .media-grid video {
-      width: 100%;
-      height: auto;
+    .media-wrapper {
+      position: relative;
       border-radius: 8px;
+      overflow: hidden;
       background-color: #f9f9f9;
       box-shadow: 0 2px 6px rgba(0,0,0,0.05);
     }
+    .media-grid img, .media-grid video {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
     .media-label {
       font-weight: bold;
-      margin-top: 6px;
+      padding: 8px 0;
       font-size: 0.85rem;
       color: #555;
       text-align: center;
+      background: #fff;
+    }
+
+    /* xfolioへの戻り用ナビゲーションボタン */
+    .portfolio-nav {
+      margin-bottom: 20px;
+    }
+    .portfolio-nav a {
+      display: inline-block;
+      padding: 10px 18px;
+      background-color: #2c3e50;
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: bold;
+      transition: background-color 0.2s;
+    }
+    .portfolio-nav a:hover {
+      background-color: #34495e;
     }
   </style>
 </head>
-<body>
+<body oncontextmenu="return false;"> <!-- ページ全体の右クリック保存防止 -->
 
   <div class="container">
-    <img src="X用4月.jpg" alt="メインビジュアル" class="header-img">
+    
+    <!-- xfolioポートフォリオへの戻りボタン -->
+    <div class="portfolio-nav">
+      <a href="https://xfolio.jp/portfolio/Chigusa_Hana" target="_top">← xfolioポートフォリオへ戻る</a>
+    </div>
+
+    <!-- ヘッダー画像 -->
+    <img src="X用4月.jpg" alt="メインビジュアル" class="header-img" ondragstart="return false;">
 
     <header>
       <h1>【3D 4Kお写真ご依頼】</h1>
@@ -47,6 +90,7 @@
       <p class="sub-text">3D(VRM)をお持ちの方へ、素敵なお写真をおつくりしています。</p>
     </header>
 
+    <!-- 🎁 全セット共通の納品内容カード -->
     <section class="section package-info">
       <h2>🎁 全セット共通の納品内容</h2>
       <p class="package-intro">どのセットを選んでも、<strong>豪華なセット内容</strong>でお届けします！</p>
@@ -68,44 +112,48 @@
       </p>
     </section>
 
+    <!-- 🖼 サンプル画像・動画ギャラリー（ダウンロード防止付き） -->
     <section class="section">
       <h2>🖼 納品イメージ＆レタッチ見本</h2>
       
+      <!-- 2026夏用セット見本 -->
       <h3>【2026夏用セット 納品見本】</h3>
       <div class="media-grid">
-        <div>
-          <img src="2026_06_夏用_3000_2.jpg" alt="引きの写真の見本">
+        <div class="media-wrapper">
+          <img src="2026_06_夏用_3000_2.jpg" alt="引きの写真の見本" ondragstart="return false;">
           <div class="media-label">引きの写真（全体構図）</div>
         </div>
-        <div>
-          <img src="2026_06_夏用_3000_3.jpg" alt="キラキラスチルの見本">
+        <div class="media-wrapper">
+          <img src="2026_06_夏用_3000_3.jpg" alt="キラキラスチルの見本" ondragstart="return false;">
           <div class="media-label">キラキラスチル（アップ・エフェクト）</div>
         </div>
       </div>
 
+      <!-- 立ち絵加筆 Before/After -->
       <h3 style="margin-top:20px;">【立ち絵加筆レタッチ（Before / After）】</h3>
       <div class="media-grid">
-        <div>
-          <img src="加筆前立ち絵1.png" alt="加筆前立ち絵">
+        <div class="media-wrapper">
+          <img src="加筆前立ち絵1.png" alt="加筆前立ち絵" ondragstart="return false;">
           <div class="media-label">Before（加筆前）</div>
         </div>
-        <div>
-          <img src="加筆立ち絵1.png" alt="加筆後立ち絵">
+        <div class="media-wrapper">
+          <img src="加筆立ち絵1.png" alt="加筆後立ち絵" ondragstart="return false;">
           <div class="media-label">After（加筆・レタッチ後）</div>
         </div>
       </div>
 
+      <!-- 動画 Before/After -->
       <h3 style="margin-top:20px;">【演出動画（Before / After）】</h3>
       <div class="media-grid">
-        <div>
-          <video controls autoplay loop muted playsinline>
-            <source src="before_after_1.mp4" type="video/mp4">
+        <div class="media-wrapper">
+          <video controls controlsList="nodownload" autoplay loop muted playsinline ondragstart="return false;">
+            <source src="fb_5_4_2.mp4" type="video/mp4">
             お使いのブラウザは動画再生に対応していません。
           </video>
           <div class="media-label">演出動画サンプル 1</div>
         </div>
-        <div>
-          <video controls autoplay loop muted playsinline>
+        <div class="media-wrapper">
+          <video controls controlsList="nodownload" autoplay loop muted playsinline ondragstart="return false;">
             <source src="before_after_2.mp4" type="video/mp4">
             お使いのブラウザは動画再生に対応していません。
           </video>
@@ -114,6 +162,7 @@
       </div>
     </section>
 
+    <!-- 💡 計算例カード -->
     <section class="section example-box">
       <h3>💡 ご依頼・お見積もり例</h3>
       <div class="example-content">
@@ -128,7 +177,9 @@
       </div>
     </section>
 
+    <!-- 💰 自動お見積もりフォーム（精密計算版） -->
     <form id="estimateForm">
+      <!-- 1. メインセット選択 -->
       <section class="section">
         <h2>1. メインセット選択（いずれか1つ）</h2>
         <div class="radio-group">
@@ -141,6 +192,7 @@
         </div>
       </section>
 
+      <!-- 2. 単品メニュー -->
       <section class="section">
         <h2>2. 単品メニュー（複数選択可）</h2>
         <div class="checkbox-group">
@@ -152,6 +204,7 @@
         <p class="note">※単品立ち絵の場合、表情差分1点につき +¥500 かかります。</p>
       </section>
 
+      <!-- 3. オプション -->
       <section class="section">
         <h2>3. オプション</h2>
         <div class="checkbox-group">
@@ -185,12 +238,14 @@
         </div>
       </section>
 
+      <!-- 特典案内 -->
       <section class="section benefit-box">
         <h3>🌟 特典案内</h3>
         <p>リピーター様・SNS等で宣伝いただいた方には特典をお付けしています！（例：Vlog風加工1点、貫通処理サービス等）</p>
         <p class="small">※FANBOX限定などポートフォリオ非公開希望の方は事前にご相談いただくか、「実績非公開」をご選択ください。</p>
       </section>
 
+      <!-- 見積もり結果表示エリア -->
       <div class="result-box">
         <p>概算見積もり金額（税抜）</p>
         <div class="price"><span id="totalPrice">3,000</span> 円〜</div>
