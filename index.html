@@ -10,7 +10,6 @@
 
   <div class="container">
 
-    <!-- 🌸 ヘッダーセクション -->
     <header class="header-card">
       <h1>🌸 3D 4K photo ご依頼・お見積もり</h1>
       <p class="subtitle">千草はな 制作依頼シミュレーター</p>
@@ -20,181 +19,207 @@
       </div>
     </header>
 
-    <!-- 🎨 作例・ギャラリーセクション -->
-    <section class="card-section">
-      <div class="section-title">
-        <span>🖼️</span>
-        <h2>制作見本・ポートフォリオ</h2>
-      </div>
-      
-      <!-- 各種リンクボタン -->
-      <div class="portfolio-nav">
-        <p>過去作品・SNS・リンク集はこちらからご確認いただけます</p>
-        <div class="nav-buttons">
-          <a href="https://lit.link/Chigusahana" class="btn-link litlink" target="_blank" rel="noopener noreferrer">Lit.link</a>
-          <a href="https://xfolio.jp/portfolio/Chigusa_Hana" class="btn-link portfolio" target="_blank" rel="noopener noreferrer">PORTFOLIO</a>
-          <a href="https://x.com/hanachigusa_ch" class="btn-link twitter" target="_blank" rel="noopener noreferrer">X (Twitter)</a>
-        </div>
+    <div class="section-with-gif">
+      <div class="gif-side gif-left">
+        <img src="はなぬい_ゆらゆらウインクループ.gif" alt="装飾GIF" class="protected-media">
+        <div class="media-shield"></div>
       </div>
 
-      <!-- 制作見本グリッド -->
-      <div class="media-grid">
-        <div class="media-wrapper">
-          <div class="media-container" onclick="openModal('2026_06_夏用_3000_2.jpg', 'img')">
-            <img src="2026_06_夏用_3000_2.jpg" alt="引きの写真例" class="protected-media">
-            <div class="media-shield"></div>
-          </div>
-          <div class="media-label">引きの写真例</div>
+      <section class="card-section">
+        <div class="section-title">
+          <span>🖼️</span>
+          <h2>制作見本・ポートフォリオ</h2>
         </div>
-        <div class="media-wrapper">
-          <div class="media-container" onclick="openModal('2026_06_夏用_3000_3.jpg', 'img')">
-            <img src="2026_06_夏用_3000_3.jpg" alt="アップの写真例" class="protected-media">
-            <div class="media-shield"></div>
-          </div>
-          <div class="media-label">アップの写真例</div>
-        </div>
-        <div class="media-wrapper">
-          <div class="media-container" onclick="openModal('before_after_1.mp4', 'video')">
-            <video class="protected-media" muted loop playsinline autoplay>
-              <source src="before_after_1.mp4" type="video/mp4">
-            </video>
-            <div class="media-shield"></div>
-          </div>
-          <div class="media-label">ビフォーアフター動画①</div>
-        </div>
-        <div class="media-wrapper">
-          <div class="media-container" onclick="openModal('before_after_2.mp4', 'video')">
-            <video class="protected-media" muted loop playsinline autoplay>
-              <source src="before_after_2.mp4" type="video/mp4">
-            </video>
-            <div class="media-shield"></div>
-          </div>
-          <div class="media-label">ビフォーアフター動画②</div>
-        </div>
-        <div class="media-wrapper">
-          <div class="media-container" onclick="openModal('加筆前立ち絵1.png', 'img')">
-            <img src="加筆前立ち絵1.png" alt="加筆前立ち絵" class="protected-media">
-            <div class="media-shield"></div>
-          </div>
-          <div class="media-label">加筆前立ち絵</div>
-        </div>
-        <div class="media-wrapper">
-          <div class="media-container" onclick="openModal('加筆立ち絵1.png', 'img')">
-            <img src="加筆立ち絵1.png" alt="加筆立ち絵" class="protected-media">
-            <div class="media-shield"></div>
-          </div>
-          <div class="media-label">加筆立ち絵</div>
-        </div>
-      </div>
-      <p class="note text-center">※画像・動画をクリックすると拡大表示でご確認いただけます。（無断転載・保存禁止）</p>
-    </section>
-
-    <!-- 🎁 特典＆お知らせセクション -->
-    <section class="card-section info-card">
-      <div class="section-title">
-        <span>🌟</span>
-        <h2>特典案内＆ご注意事項</h2>
-      </div>
-
-      <div class="info-box benefit-box">
-        <h3>🎁 ご利用特典</h3>
-        <p><strong>リピーター様</strong> または <strong>SNS等で宣伝いただいた方</strong> には特典をお付けしています！</p>
-        <ul>
-          <li>Vlog風加工（1点サービス）</li>
-          <li>貫通処理（無料対応） 等</li>
-        </ul>
-      </div>
-
-      <div class="info-box caution-box">
-        <h3>🔒 ポートフォリオ公開について</h3>
-        <p>※ポートフォリオ非公開希望の方は「実績非公開」をご選択ください。</p>
-      </div>
-    </section>
-
-    <!-- 📝 お見積もりフォームセクション -->
-    <section class="card-section estimate-card">
-      <div class="section-title">
-        <span>📝</span>
-        <h2>お見積もりシミュレーター</h2>
-      </div>
-
-      <form id="estimateForm">
         
-        <!-- 1. メインセット -->
-        <div class="form-group">
-          <h3>1. メインセット選択（いずれか1つ）</h3>
-          <div class="radio-group">
-            <label><input type="radio" name="mainSet" value="3000" checked> 背景持ち込みポージング指定セット (¥3,000〜)</label>
-            <label><input type="radio" name="mainSet" value="4000"> 季節かシチュエーション指定ポージングおまかせセット (¥4,000〜)</label>
-            <label><input type="radio" name="mainSet" value="2000"> 全部持ち込みお写真馴染ませセット (¥2,000〜)</label>
-            <label><input type="radio" name="mainSet" value="2000"> VRCHATお写真レタッチセット (¥2,000〜)</label>
-            <label><input type="radio" name="mainSet" value="6000"> 完全こだわりセット (¥6,000〜)</label>
-            <label><input type="radio" name="mainSet" value="0"> セットなし（単品のみ希望）</label>
+        <div class="portfolio-nav">
+          <p>過去作品・SNS・リンク集はこちらからご確認いただけます</p>
+          <div class="nav-buttons">
+            <a href="https://lit.link/Chigusahana" class="btn-link litlink" target="_blank" rel="noopener noreferrer">Lit.link</a>
+            <a href="https://xfolio.jp/portfolio/Chigusa_Hana" class="btn-link portfolio" target="_blank" rel="noopener noreferrer">PORTFOLIO</a>
+            <a href="https://x.com/hanachigusa_ch" class="btn-link twitter" target="_blank" rel="noopener noreferrer">X (Twitter)</a>
           </div>
         </div>
 
-        <!-- 2. 単品メニュー -->
-        <div class="form-group">
-          <h3>2. 単品メニュー（複数選択可）</h3>
-          <div class="checkbox-group">
-            <label><input type="checkbox" class="opt" value="2500"> キラキラスチルのみ(アップ) (+¥2,500〜)</label>
-            <label><input type="checkbox" class="opt" value="2000"> キラキラ無し各種 (+¥2,000〜)</label>
-            <label><input type="checkbox" class="opt" value="1200"> 立ち絵の撮影 (+¥1,200〜)</label>
-            <label><input type="checkbox" class="opt" value="2200"> 加筆立ち絵の撮影 (+¥2,200〜)</label>
+        <div class="media-grid">
+          <div class="media-wrapper">
+            <div class="media-container" onclick="openModal('2026_06_夏用_3000_2.jpg', 'img')">
+              <img src="2026_06_夏用_3000_2.jpg" alt="引きの写真例" class="protected-media">
+              <div class="media-shield"></div>
+            </div>
+            <div class="media-label">引きの写真例</div>
           </div>
-          <p class="note">※単品立ち絵の場合、表情差分1点につき +¥500 かかります。</p>
+          <div class="media-wrapper">
+            <div class="media-container" onclick="openModal('2026_06_夏用_3000_3.jpg', 'img')">
+              <img src="2026_06_夏用_3000_3.jpg" alt="アップの写真例" class="protected-media">
+              <div class="media-shield"></div>
+            </div>
+            <div class="media-label">アップの写真例</div>
+          </div>
+          <div class="media-wrapper">
+            <div class="media-container" onclick="openModal('before_after_1.mp4', 'video')">
+              <video class="protected-media" muted loop playsinline autoplay>
+                <source src="before_after_1.mp4" type="video/mp4">
+              </video>
+              <div class="media-shield"></div>
+            </div>
+            <div class="media-label">ビフォーアフター動画①</div>
+          </div>
+          <div class="media-wrapper">
+            <div class="media-container" onclick="openModal('before_after_2.mp4', 'video')">
+              <video class="protected-media" muted loop playsinline autoplay>
+                <source src="before_after_2.mp4" type="video/mp4">
+              </video>
+              <div class="media-shield"></div>
+            </div>
+            <div class="media-label">ビフォーアフター動画②</div>
+          </div>
+          <div class="media-wrapper">
+            <div class="media-container" onclick="openModal('加筆前立ち絵1.png', 'img')">
+              <img src="加筆前立ち絵1.png" alt="加筆前立ち絵" class="protected-media">
+              <div class="media-shield"></div>
+            </div>
+            <div class="media-label">加筆前立ち絵</div>
+          </div>
+          <div class="media-wrapper">
+            <div class="media-container" onclick="openModal('加筆立ち絵1.png', 'img')">
+              <img src="加筆立ち絵1.png" alt="加筆立ち絵" class="protected-media">
+              <div class="media-shield"></div>
+            </div>
+            <div class="media-label">加筆立ち絵</div>
+          </div>
+        </div>
+        <p class="note text-center">※画像・動画をクリックすると拡大表示でご確認いただけます。（無断転載・保存禁止）</p>
+      </section>
+
+      <div class="gif-side gif-right">
+        <img src="はなぬい_ゆらゆらループ1.gif" alt="装飾GIF" class="protected-media">
+        <div class="media-shield"></div>
+      </div>
+    </div>
+
+    <div class="section-with-gif">
+      <div class="gif-side gif-left">
+        <img src="GIF_フリフリ.gif" alt="装飾GIF" class="protected-media">
+        <div class="media-shield"></div>
+      </div>
+
+      <section class="card-section info-card">
+        <div class="section-title">
+          <span>🌟</span>
+          <h2>特典案内＆ご注意事項</h2>
         </div>
 
-        <!-- 3. オプション -->
-        <div class="form-group">
-          <h3>3. オプション</h3>
-          <div class="checkbox-group">
-            <label><input type="checkbox" class="opt" value="500"> 表情加筆 (+¥500)</label>
-            <label><input type="checkbox" class="opt" value="500"> 貫通処理 (+¥500)</label>
-            <label><input type="checkbox" class="opt" value="500"> 表情差分 (1点目無料 / 2点目以降+¥500)</label>
-            <label><input type="checkbox" class="opt" value="800"> 小物を持たせる (+¥800)</label>
-            <label><input type="checkbox" class="opt" value="800"> 加工した透過立ち絵 (+¥800)</label>
-            <label><input type="checkbox" class="opt" value="800"> 加筆が必要な背景処理 (+¥800)</label>
-            <label><input type="checkbox" class="opt" value="1500"> 3D小物追加 (+¥1,500)</label>
-            <label><input type="checkbox" class="opt" value="1500"> レイヤー別納品 (+¥1,500)</label>
-            <label><input type="checkbox" class="opt" value="500"> Vlog風色味加工 (+¥500)</label>
-            <label><input type="checkbox" class="opt" value="800"> キラキラスチルメイン(アップよりも引き) (+¥800)</label>
-            <label><input type="checkbox" class="opt" value="2000"> 実績非公開 (+¥2,000)</label>
-          </div>
-
-          <div class="select-group">
-            <span>お急ぎ便指定:</span>
-            <select id="express">
-              <option value="0">なし（通常納期）</option>
-              <option value="300">お急ぎ便 2週間 (+¥300)</option>
-              <option value="1000">お急ぎ便 1週間 (+¥1,000)</option>
-              <option value="3000">お急ぎ便 3日 (+¥3,000)</option>
-              <option value="5000">お急ぎ便 1日 (+¥5,000)</option>
-            </select>
-          </div>
-
-          <div class="number-group">
-            <span>追加キャラクター人数 (+¥2,500/人):</span>
-            <input type="number" id="charCount" value="0" min="0" max="10">
-          </div>
+        <div class="info-box benefit-box">
+          <h3>🎁 ご利用特典</h3>
+          <p><strong>リピーター様</strong> または <strong>SNS等で宣伝いただいた方</strong> には特典をお付けしています！</p>
+          <ul>
+            <li>Vlog風加工（1点サービス）</li>
+            <li>貫通処理（無料対応） 等</li>
+          </ul>
         </div>
 
-        <!-- 💰 お見積もり結果 -->
-        <div class="result-box">
-          <div class="price-tax-excluded">概算お見積もり（税抜）: <span id="totalPrice">3,000</span> 円〜</div>
-          <div class="price-tax-included">お支払予想額（税込10%）: <span id="totalPriceTax">3,300</span> 円〜</div>
+        <div class="info-box caution-box">
+          <h3>🔒 ポートフォリオ公開について</h3>
+          <p>※ポートフォリオ非公開希望の方は「実績非公開」をご選択ください。</p>
+        </div>
+      </section>
+
+      <div class="gif-side gif-right">
+        <img src="GIF_投げキッス.gif" alt="装飾GIF" class="protected-media">
+        <div class="media-shield"></div>
+      </div>
+    </div>
+
+    <div class="section-with-gif">
+      <div class="gif-side gif-left">
+        <img src="1.gif" alt="装飾GIF" class="protected-media">
+        <div class="media-shield"></div>
+      </div>
+
+      <section class="card-section estimate-card">
+        <div class="section-title">
+          <span>📝</span>
+          <h2>お見積もりシミュレーター</h2>
         </div>
 
-        <div class="send-btn-wrapper">
-          <button type="button" id="sendEmailBtn" class="send-btn">💌 この内容でメールを作成する</button>
-        </div>
+        <form id="estimateForm">
+          
+          <div class="form-group">
+            <h3>1. メインセット選択（いずれか1つ）</h3>
+            <div class="radio-group">
+              <label><input type="radio" name="mainSet" value="3000" checked> 背景持ち込みポージング指定セット (¥3,000〜)</label>
+              <label><input type="radio" name="mainSet" value="4000"> 季節かシチュエーション指定ポージングおまかせセット (¥4,000〜)</label>
+              <label><input type="radio" name="mainSet" value="2000"> 全部持ち込みお写真馴染ませセット (¥2,000〜)</label>
+              <label><input type="radio" name="mainSet" value="2000"> VRCHATお写真レタッチセット (¥2,000〜)</label>
+              <label><input type="radio" name="mainSet" value="6000"> 完全こだわりセット (¥6,000〜)</label>
+              <label><input type="radio" name="mainSet" value="0"> セットなし（単品のみ希望）</label>
+            </div>
+          </div>
 
-      </form>
-    </section>
+          <div class="form-group">
+            <h3>2. 単品メニュー（複数選択可）</h3>
+            <div class="checkbox-group">
+              <label><input type="checkbox" class="opt" value="2500"> キラキラスチルのみ(アップ) (+¥2,500〜)</label>
+              <label><input type="checkbox" class="opt" value="2000"> キラキラ無し各種 (+¥2,000〜)</label>
+              <label><input type="checkbox" class="opt" value="1200"> 立ち絵の撮影 (+¥1,200〜)</label>
+              <label><input type="checkbox" class="opt" value="2200"> 加筆立ち絵の撮影 (+¥2,200〜)</label>
+            </div>
+            <p class="note">※単品立ち絵の場合、表情差分1点につき +¥500 かかります。</p>
+          </div>
+
+          <div class="form-group">
+            <h3>3. オプション</h3>
+            <div class="checkbox-group">
+              <label><input type="checkbox" class="opt" value="500"> 表情加筆 (+¥500)</label>
+              <label><input type="checkbox" class="opt" value="500"> 貫通処理 (+¥500)</label>
+              <label><input type="checkbox" class="opt" value="500"> 表情差分 (1点目無料 / 2点目以降+¥500)</label>
+              <label><input type="checkbox" class="opt" value="800"> 小物を持たせる (+¥800)</label>
+              <label><input type="checkbox" class="opt" value="800"> 加工した透過立ち絵 (+¥800)</label>
+              <label><input type="checkbox" class="opt" value="800"> 加筆が必要な背景処理 (+¥800)</label>
+              <label><input type="checkbox" class="opt" value="1500"> 3D小物追加 (+¥1,500)</label>
+              <label><input type="checkbox" class="opt" value="1500"> レイヤー別納品 (+¥1,500)</label>
+              <label><input type="checkbox" class="opt" value="500"> Vlog風色味加工 (+¥500)</label>
+              <label><input type="checkbox" class="opt" value="800"> キラキラスチルメイン(引き) (+¥800)</label>
+              <label><input type="checkbox" class="opt" value="2000"> 実績非公開 (+¥2,000)</label>
+            </div>
+
+            <div class="select-group">
+              <span>お急ぎ便指定:</span>
+              <select id="express">
+                <option value="0">なし（通常納期）</option>
+                <option value="300">お急ぎ便 2週間 (+¥300)</option>
+                <option value="1000">お急ぎ便 1週間 (+¥1,000)</option>
+                <option value="3000">お急ぎ便 3日 (+¥3,000)</option>
+                <option value="5000">お急ぎ便 1日 (+¥5,000)</option>
+              </select>
+            </div>
+
+            <div class="number-group">
+              <span>追加キャラクター人数 (+¥2,500/人):</span>
+              <input type="number" id="charCount" value="0" min="0" max="10">
+            </div>
+          </div>
+
+          <div class="result-box">
+            <div class="price-tax-excluded">概算お見積もり（税抜）: <span id="totalPrice">3,000</span> 円〜</div>
+            <div class="price-tax-included">お支払予想額（税込10%）: <span id="totalPriceTax">3,300</span> 円〜</div>
+          </div>
+
+          <div class="send-btn-wrapper">
+            <button type="button" id="sendEmailBtn" class="send-btn">💌 この内容でメールを作成する</button>
+          </div>
+
+        </form>
+      </section>
+
+      <div class="gif-side gif-right">
+        <img src="2.gif" alt="装飾GIF" class="protected-media">
+        <div class="media-shield"></div>
+      </div>
+    </div>
 
   </div>
 
-  <!-- 🔍 拡大表示用モーダル -->
   <div id="imageModal" class="modal-overlay" onclick="closeModal()">
     <div class="modal-content-wrapper" onclick="event.stopPropagation()">
       <span id="modalClose" class="modal-close-btn" onclick="closeModal()">&times;</span>
