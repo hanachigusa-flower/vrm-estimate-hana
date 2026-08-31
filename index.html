@@ -99,7 +99,7 @@
       </div>
     </div>
 
-    <!-- 📦 2つ目のブロック：セット内容のご案内（独立カード） -->
+    <!-- 📦 2つ目のブロック：セット内容のご案内 -->
     <div class="section-with-gif">
       <div class="gif-side gif-left">
         <img src="GIF_フリフリ.gif" alt="装飾GIF" class="protected-media">
@@ -178,73 +178,21 @@
       </div>
     </div>
 
-    <!-- 📋 4つ目のブロック：ご依頼テンプレート＆お取引の流れ -->
+    <!-- 📋 4つ目のブロック：お取引の流れ（参考用） -->
     <div class="section-with-gif">
       <div class="gif-side gif-left">
         <img src="1.gif" alt="装飾GIF" class="protected-media">
         <div class="media-shield"></div>
       </div>
 
-      <section class="card-section template-card">
+      <section class="card-section flow-card">
         <div class="section-title">
           <span>📋</span>
-          <h2>ご依頼テンプレート ＆ お取引の流れ</h2>
+          <h2>お取引の流れ</h2>
         </div>
-
-        <div class="template-box">
-          <h3>【ご依頼テンプレート】</h3>
-          <p>・使用用途<br>【】<br>
-          ・納期<br>【】<br>
-          ・納品ファイル形式(指定ない場合PNG)<br>【】<br>
-          ・フルスクラッチモデルかVroidか<br>【】<br>
-          ・人数<br>【】<br>
-          ・ご予算<br>【】<br>
-          ・SNS/ポートフォリオへの公開許可 /公開して良い時期<br>【】<br>
-          ・セットの選択<br>【】<br>
-          ・AI画像の使用の可否<br>【】</p>
-        </div>
-
-        <div class="template-detail-container">
-          <div class="template-detail-box">
-            <h4>【◎背景持ち込みポージング指定セットの場合】</h4>
-            <p>↳ ・指定のポージング<br>
-              ・使用する背景<br>
-              ・表情1点(＋差分)</p>
-            <p class="note-small">ご用意いただく背景は、利用規約を確認し元のサイトがあればそちらを貼ってくださると幸いです。<br>
-            AI背景可、リアル写真可<br>
-            ※4Kサイズ以下のものですと若干画質が落ちます。できる限り綺麗にしてお渡しはしておりますがご了承ください。</p>
-          </div>
-
-          <div class="template-detail-box">
-            <h4>【◎季節かシュチュエーション指定ポージングおまかせセット】</h4>
-            <p>↳ ・欲しいお写真の季節(春、夏、秋、冬)<br>
-              ・シュチュ(例、ライブ、プール、屋内)<br>
-            ・表情1点(＋差分表情1点)</p>
-            <p class="note-small">※ご指定頂いたシュチュエーションによってはAI画像を使用する場合がございます。予めご了承ください。</p>
-          </div>
-
-          <div class="template-detail-box">
-            <h4>【◎全部持ち込みお写真馴染ませセットの場合】</h4>
-            <p>・背景<br>
-            ・透過png形式の立ち絵<br>
-            ・雰囲気(こんな感じのキラキラにしてほしい！等)</p>
-          </div>
-
-          <div class="template-detail-box">
-            <h4>【◎VRCHATお写真レタッチセット】</h4>
-            <p>撮ってきてくださったお写真のレタッチを致します<br>
-            活動者様以外のご依頼も募集💚</p>
-            <p><strong>ーご用意いただくものー</strong><br>
-            ・背景、人物一緒のお写真<br>
-            ・背景だけのお写真<br>
-            ・人物(透過)だけのお写真</p>
-          </div>
-        </div>
-
         <div class="flow-box">
-          <h3>【ご依頼の流れ】</h3>
           <ol>
-            <li>上記テンプレートを使用したご依頼打ち合わせ</li>
+            <li>下のシミュレーターよりご依頼内容を入力・メールを作成</li>
             <li>お見積り、お見積り内容の確認</li>
             <li>構図、背景のラフの確認(背景お任せの方は背景案)</li>
             <li>お支払い(③から1週間以内)</li>
@@ -255,7 +203,6 @@
             ※活動者様以外のVRCHATレタッチセットにつきましては全額前払いにてお引き受けいたします。
           </div>
         </div>
-
       </section>
 
       <div class="gif-side gif-right">
@@ -264,7 +211,7 @@
       </div>
     </div>
 
-    <!-- 📝 5つ目のブロック：お見積もりフォーム -->
+    <!-- 📝 5つ目のブロック：ご依頼お見積もりシミュレーター（フォーム統合版） -->
     <div class="section-with-gif">
       <div class="gif-side gif-left">
         <img src="はなぬい_ゆらゆらウインクループ.gif" alt="装飾GIF" class="protected-media">
@@ -274,16 +221,61 @@
       <section class="card-section estimate-card">
         <div class="section-title">
           <span>📝</span>
-          <h2>お見積もりシミュレーター</h2>
+          <h2>ご依頼テンプレート ＆ お見積もりシミュレーター</h2>
         </div>
 
         <form id="estimateForm">
           
-          <!-- 1. メインセット -->
+          <!-- ご依頼テンプレート基本項目 -->
+          <div class="form-group">
+            <h3>📌 基本情報のご入力</h3>
+            
+            <div class="input-row">
+              <label>使用用途</label>
+              <input type="text" id="t_usage" placeholder="例：SNSアイコン、配信用サムネイル 等" class="text-input">
+            </div>
+
+            <div class="input-row">
+              <label>納期のご希望</label>
+              <input type="text" id="t_deadline" placeholder="例：〇月〇日頃まで、お急ぎ 等" class="text-input">
+            </div>
+
+            <div class="input-row">
+              <label>納品ファイル形式 (指定ない場合PNG)</label>
+              <input type="text" id="t_format" value="PNG" class="text-input">
+            </div>
+
+            <div class="input-row">
+              <label>モデルの種類</label>
+              <div class="inline-radios">
+                <label><input type="radio" name="t_modelType" value="フルスクラッチモデル" checked> フルスクラッチモデル</label>
+                <label><input type="radio" name="t_modelType" value="Vroid"> Vroid</label>
+              </div>
+            </div>
+
+            <div class="input-row">
+              <label>ご予算</label>
+              <input type="text" id="t_budget" placeholder="例：5,000円前後" class="text-input">
+            </div>
+
+            <div class="input-row">
+              <label>SNS/ポートフォリオへの公開許可・時期</label>
+              <input type="text" id="t_publish" placeholder="例：即時OK、〇月〇日以降ならOK 等" class="text-input">
+            </div>
+
+            <div class="input-row">
+              <label>AI画像の使用の可否</label>
+              <div class="inline-radios">
+                <label><input type="radio" name="t_ai" value="可" checked> 可</label>
+                <label><input type="radio" name="t_ai" value="不可"> 不可</label>
+              </div>
+            </div>
+          </div>
+
+          <!-- 1. メインセット選択 -->
           <div class="form-group">
             <h3>1. メインセット選択（いずれか1つ）</h3>
             
-            <!-- 💡 実績非公開等に関する事前案内 -->
             <div class="set-notice-box">
               ⚠️ <strong>実績非公開・限定公開について</strong><br>
               実績非公開のほか、FANBOXやメンバーシップ限定などポートフォリオに掲載できない場合も、事前にご相談いただくかオプションの「実績非公開」をお選びください。
@@ -291,7 +283,7 @@
 
             <div class="radio-group card-radio-group">
               <label class="set-card">
-                <input type="radio" name="mainSet" value="3000" checked>
+                <input type="radio" name="mainSet" value="3000" data-setname="背景持ち込み・ポージング指定セット" checked>
                 <div class="set-card-content">
                   <div class="set-title-price">
                     <span class="set-title">背景持ち込み・ポージング指定セット</span>
@@ -302,7 +294,7 @@
               </label>
 
               <label class="set-card">
-                <input type="radio" name="mainSet" value="4000">
+                <input type="radio" name="mainSet" value="4000" data-setname="季節・シチュエーション指定 ポージングおまかせセット">
                 <div class="set-card-content">
                   <div class="set-title-price">
                     <span class="set-title">季節・シチュエーション指定 ポージングおまかせセット</span>
@@ -313,7 +305,7 @@
               </label>
 
               <label class="set-card">
-                <input type="radio" name="mainSet" value="2000">
+                <input type="radio" name="mainSet" value="2000" data-setname="全部持ち込み お写真馴染ませセット">
                 <div class="set-card-content">
                   <div class="set-title-price">
                     <span class="set-title">全部持ち込み お写真馴染ませセット</span>
@@ -324,7 +316,7 @@
               </label>
 
               <label class="set-card">
-                <input type="radio" name="mainSet" value="2000">
+                <input type="radio" name="mainSet" value="2000" data-setname="VRChat お写真レタッチセット">
                 <div class="set-card-content">
                   <div class="set-title-price">
                     <span class="set-title">VRChat お写真レタッチセット</span>
@@ -335,7 +327,7 @@
               </label>
 
               <label class="set-card">
-                <input type="radio" name="mainSet" value="6000">
+                <input type="radio" name="mainSet" value="6000" data-setname="完全こだわりセット">
                 <div class="set-card-content">
                   <div class="set-title-price">
                     <span class="set-title">完全こだわりセット</span>
@@ -347,7 +339,7 @@
               </label>
 
               <label class="set-card simple-option">
-                <input type="radio" name="mainSet" value="0">
+                <input type="radio" name="mainSet" value="0" data-setname="セットなし（単品のみ希望）">
                 <div class="set-card-content">
                   <div class="set-title-price">
                     <span class="set-title">セットなし（単品のみ希望）</span>
@@ -356,6 +348,93 @@
                 </div>
               </label>
             </div>
+          </div>
+
+          <!-- 🔗 セットに応じた詳細入力欄（自動切り替え） -->
+          <div class="form-group dynamic-detail-section">
+            <h3>📌 選択したセットの詳細ご要望</h3>
+
+            <!-- ① 背景持ち込みセット用 -->
+            <div id="detail_box_set1" class="set-detail-subbox">
+              <p class="subbox-title">【背景持ち込み・ポージング指定セット 詳細】</p>
+              <div class="input-row">
+                <label>指定のポージング</label>
+                <input type="text" id="sub_pose1" placeholder="ポーズのご指定内容" class="text-input">
+              </div>
+              <div class="input-row">
+                <label>使用する背景（元サイトURLや画像詳細）</label>
+                <input type="text" id="sub_bg1" placeholder="利用規約確認済みの元サイトURLや画像名" class="text-input">
+              </div>
+              <div class="input-row">
+                <label>表情1点 ＋ 差分</label>
+                <input type="text" id="sub_face1" placeholder="ご希望の表情（例：笑顔、ウインク等）" class="text-input">
+              </div>
+              <p class="note-small">※AI背景可、リアル写真可。4Kサイズ以下のものは若干画質が落ちる場合があります。</p>
+            </div>
+
+            <!-- ② 季節・シチュエーションおまかせセット用 -->
+            <div id="detail_box_set2" class="set-detail-subbox" style="display:none;">
+              <p class="subbox-title">【季節・シチュエーション指定 おまかせセット 詳細】</p>
+              <div class="input-row">
+                <label>ご希望の季節</label>
+                <select id="sub_season" class="select-box">
+                  <option value="春">春</option>
+                  <option value="夏">夏</option>
+                  <option value="秋">秋</option>
+                  <option value="冬">冬</option>
+                </select>
+              </div>
+              <div class="input-row">
+                <label>シチュエーション</label>
+                <input type="text" id="sub_situation" placeholder="例：ライブ、プール、屋内 等" class="text-input">
+              </div>
+              <div class="input-row">
+                <label>表情1点 ＋ 表情差分1点</label>
+                <input type="text" id="sub_face2" placeholder="ご希望の表情（例：通常、照れ顔 等）" class="text-input">
+              </div>
+              <p class="note-small">※ご指定のシチュエーションによりAI画像を使用する場合があります。</p>
+            </div>
+
+            <!-- ③ 全部持ち込みお写真馴染ませセット用 -->
+            <div id="detail_box_set3" class="set-detail-subbox" style="display:none;">
+              <p class="subbox-title">【全部持ち込み お写真馴染ませセット 詳細】</p>
+              <div class="input-row">
+                <label>背景について</label>
+                <input type="text" id="sub_bg3" placeholder="お持ち込み背景について" class="text-input">
+              </div>
+              <div class="input-row">
+                <label>透過png形式の立ち絵</label>
+                <input type="text" id="sub_tachi3" placeholder="立ち絵の状況について" class="text-input">
+              </div>
+              <div class="input-row">
+                <label>雰囲気・ご要望</label>
+                <input type="text" id="sub_mood3" placeholder="例：こんな感じのキラキラにしてほしい！ 等" class="text-input">
+              </div>
+            </div>
+
+            <!-- ④ VRChatお写真レタッチセット用 -->
+            <div id="detail_box_set4" class="set-detail-subbox" style="display:none;">
+              <p class="subbox-title">【VRChat お写真レタッチセット 詳細】</p>
+              <div class="input-row">
+                <label>ご依頼者様のご活動について</label>
+                <div class="inline-radios">
+                  <label><input type="radio" name="sub_vrc_user" value="活動者様" checked> 活動者様</label>
+                  <label><input type="radio" name="sub_vrc_user" value="活動者様以外"> 活動者様以外（※全額前払いとなります）</label>
+                </div>
+              </div>
+              <p class="note-small"><strong>ーご用意いただくものー</strong><br>
+              ・背景、人物一緒のお写真 / ・背景だけのお写真 / ・人物(透過)だけのお写真</p>
+            </div>
+
+            <!-- ⑤ 完全こだわりセット / セットなし用 -->
+            <div id="detail_box_set5" class="set-detail-subbox" style="display:none;">
+              <p class="subbox-title">【ご要望・備考】</p>
+              <div class="input-row">
+                <label>こだわりの詳細や単品ご希望の内容</label>
+                <input type="text" id="sub_free" placeholder="ご自由にお書きください" class="text-input">
+              </div>
+            </div>
+
           </div>
 
           <!-- 2. 単品メニュー -->
@@ -418,7 +497,7 @@
       </section>
 
       <div class="gif-side gif-right">
-        <img src="はなぬい_ゆらゆらウインクループ.gif" alt="装飾GIF" class="protected-media">
+        <img src="はなぬい_ゆらゆらループ1.gif" alt="装飾GIF" class="protected-media">
         <div class="media-shield"></div>
       </div>
     </div>
