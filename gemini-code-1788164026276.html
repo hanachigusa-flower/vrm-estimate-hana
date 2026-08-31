@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D 4K photo ご依頼・お見積もり</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>【3D 4Kお写真ご依頼】</h1>
+      <p class="status">現在依頼受付中！ <br><span>2026年10月以降納品受付◎</span></p>
+      <p class="sub-text">3D(VRM)をお持ちの方へ、素敵なお写真をおつくりしています。</p>
+    </header>
+
+    <form id="estimateForm">
+      <section class="section">
+        <h2>1. メインセット選択（いずれか1つ）</h2>
+        <div class="radio-group">
+          <label><input type="radio" name="mainSet" value="3000" checked> 背景持ち込みポージング指定セット (¥3,000〜)</label>
+          <label><input type="radio" name="mainSet" value="4000"> 季節かシュチュエーション指定ポージングおまかせセット (¥4,000〜)</label>
+          <label><input type="radio" name="mainSet" value="2000"> 全部持ち込みお写真馴染ませセット (¥2,000〜)</label>
+          <label><input type="radio" name="mainSet" value="2000"> VRCHATお写真レタッチセット (¥2,000〜)</label>
+          <label><input type="radio" name="mainSet" value="6000"> 完全こだわりセット (¥6,000〜)</label>
+          <label><input type="radio" name="mainSet" value="0"> セットなし（単品のみ希望）</label>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>2. 単品メニュー（複数選択可）</h2>
+        <div class="checkbox-group">
+          <label><input type="checkbox" class="opt" value="2500"> キラキラスチルのみ(アップ) (+¥2,500〜)</label>
+          <label><input type="checkbox" class="opt" value="2000"> キラキラ無し各種 (+¥2,000〜)</label>
+          <label><input type="checkbox" class="opt" value="1200"> 立ち絵の撮影 (+¥1,200〜)</label>
+          <label><input type="checkbox" class="opt" value="2200"> 加筆立ち絵の撮影 (+¥2,200〜)</label>
+        </div>
+        <p class="note">※単品立ち絵の場合、表情差分1点につき +¥500 かかります。</p>
+      </section>
+
+      <section class="section">
+        <h2>3. オプション</h2>
+        <div class="checkbox-group">
+          <label><input type="checkbox" class="opt" value="500"> 表情加筆 (+¥500)</label>
+          <label><input type="checkbox" class="opt" value="500"> 貫通処理 (+¥500)</label>
+          <label><input type="checkbox" class="opt" value="500"> 表情差分 (1点目無料 / 2点目以降+¥500)</label>
+          <label><input type="checkbox" class="opt" value="800"> 小物を持たせる (+¥800)</label>
+          <label><input type="checkbox" class="opt" value="800"> 加工した透過立ち絵 (+¥800)</label>
+          <label><input type="checkbox" class="opt" value="800"> 加筆が必要な背景処理 (+¥800)</label>
+          <label><input type="checkbox" class="opt" value="1500"> 3D小物追加 (+¥1,500)</label>
+          <label><input type="checkbox" class="opt" value="1500"> レイヤー別納品 (+¥1,500)</label>
+          <label><input type="checkbox" class="opt" value="500"> Vlog風色味加工 (+¥500)</label>
+          <label><input type="checkbox" class="opt" value="800"> キラキラスチルメイン(引き) (+¥800)</label>
+          <label><input type="checkbox" class="opt" value="2000"> 実績非公開 (+¥2,000)</label>
+        </div>
+
+        <div class="select-group">
+          <label for="express">お急ぎ便指定:</label>
+          <select id="express" class="opt-select">
+            <option value="0">なし（通常納期）</option>
+            <option value="300">2週間 (+¥300)</option>
+            <option value="1000">1週間 (+¥1,000)</option>
+            <option value="3000">3日 (+¥3,000)</option>
+            <option value="5000">1日 (+¥5,000)</option>
+          </select>
+        </div>
+
+        <div class="number-group">
+          <label for="charCount">追加キャラクター人数 (+¥2,500/人):</label>
+          <input type="number" id="charCount" min="0" value="0">
+        </div>
+      </section>
+
+      <section class="section benefit-box">
+        <h3>🌟 特典案内</h3>
+        <p>リピーター様・SNS等で宣伝いただいた方には特典をお付けしています！（例：Vlog風加工1点、貫通処理サービス等）</p>
+        <p class="small">※FANBOX限定などポートフォリオ非公開希望の方は事前にご相談いただくか、「実績非公開」をご選択ください。</p>
+      </section>
+
+      <div class="result-box">
+        <p>概算見積もり金額</p>
+        <div class="price"><span id="totalPrice">3,000</span> 円〜</div>
+      </div>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

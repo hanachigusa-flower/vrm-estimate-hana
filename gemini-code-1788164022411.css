@@ -1,0 +1,135 @@
+body {
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+  background-color: #f7f9fc;
+  color: #333;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 650px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+header {
+  text-align: center;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 20px;
+  margin-bottom: 25px;
+}
+
+h1 {
+  font-size: 1.5rem;
+  color: #2c3e50;
+  margin-bottom: 8px;
+}
+
+.status {
+  font-weight: bold;
+  color: #e67e22;
+}
+
+.status span {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+}
+
+.sub-text {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.section {
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px dashed #eee;
+}
+
+h2 {
+  font-size: 1.1rem;
+  color: #34495e;
+  margin-bottom: 12px;
+}
+
+.radio-group label,
+.checkbox-group label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.select-group, .number-group {
+  margin-top: 15px;
+}
+
+label {
+  font-size: 0.95rem;
+}
+
+input[type="number"], select {
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-left: 8px;
+}
+
+.note {
+  font-size: 0.8rem;
+  color: #e74c3c;
+  margin-top: 5px;
+}
+
+.benefit-box {
+  background-color: #fff9e6;
+  padding: 15px;
+  border-radius: 8px;
+  border-left: 4px solid #f1c40f;
+  border-bottom: none;
+}
+
+.benefit-box h3 {
+  margin: 0 0 8px 0;
+  font-size: 1rem;
+  color: #d35400;
+}
+
+.benefit-box p {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.benefit-box .small {
+  margin-top: 6px;
+  font-size: 0.75rem;
+  color: #7f8c8d;
+}
+
+/* 金額計算表示エリア */
+.result-box {
+  position: sticky;
+  bottom: 20px;
+  background: #2c3e50;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.result-box p {
+  margin: 0;
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+.result-box .price {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #f1c40f;
+}
