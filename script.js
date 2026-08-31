@@ -45,7 +45,6 @@ function calculateTotal() {
 document.addEventListener('DOMContentLoaded', function() {
   const form = document.getElementById('estimateForm');
   if (form) {
-    // フォーム内のクリック・入力・変更をすべて検知して再計算
     form.addEventListener('change', calculateTotal);
     form.addEventListener('input', calculateTotal);
     form.addEventListener('click', calculateTotal);
@@ -93,11 +92,38 @@ document.addEventListener('DOMContentLoaded', function() {
         `【ご要望・補足など】\n` +
         `（ここにポージングのご希望や気になる点をご記入ください）\n`;
 
-      // Web版Gmail作成画面のURLを生成
       const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(yourEmail)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-      // 新しいタブでGmail作成画面を開く
       window.open(gmailUrl, '_blank');
+    });
+  }
+
+  // 🔍 画像クリックによる拡大表示（モーダル処理）
+  const modal = document.getElementById('imageModal');
+  const modalImg = document.getElementById('modalImg');
+  const modalClose = document.getElementById('modalClose');
+  const clickableImages = document.querySelectorAll('.clickable-media');
+
+  clickableImages.forEach(img => {
+    img.addEventListener('click', function() {
+      if (modal && modalImg) {
+        modal.style.display = 'flex';
+        modalImg.src = this.src;
+      }
+    });
+  });
+
+  // 閉じるボタンまたは背景クリックでモーダルを閉じる
+  if (modalClose) {
+    modalClose.addEventListener('click', function() {
+      modal.style.display = 'none';
+    });
+  }
+
+  if (modal) {
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal || e.target === modalImg) {
+        modal.style.display = 'none';
+      }
     });
   }
 
