@@ -1,290 +1,162 @@
-@charset "UTF-8";
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D 4K photo ご依頼・お見積もり | 千草はな</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-/* --- 全体レイアウト --- */
-body {
-  font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
-  background-color: #fff9fb;
-  color: #444;
-  line-height: 1.6;
-  margin: 0;
-  padding: 20px 10px 80px 10px;
-}
+  <div class="container">
 
-.container {
-  max-width: 680px;
-  margin: 0 auto;
-  background: #ffffff;
-  padding: 30px 25px;
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(231, 76, 60, 0.08);
-  border: 1px solid #ffeef2;
-}
+    <!-- 🌸 ヘッダーセクション -->
+    <header class="header-card">
+      <h1>🌸 3D 4K photo ご依頼・お見積もり</h1>
+      <p class="subtitle">千草はな 制作依頼シミュレーター</p>
+      <img src="header.jpg" alt="ヘッダー画像" class="header-img clickable-media" oncontextmenu="return false;" ondragstart="return false;">
+    </header>
 
-/* 🖱️ 手持ちのアニメーションカーソル設定 */
-/* ※ `通常の選択.ani` 部分をご自身のファイル名（.ani / .gif など）に変更してください */
-a, button, input[type="radio"], input[type="checkbox"], select, label, .clickable-media {
-  cursor: url('my-cursor.ani'), pointer !important;
-}
+    <!-- 🎨 作例・ギャラリーセクション -->
+    <section class="card-section">
+      <div class="section-title">
+        <span>🖼️</span>
+        <h2>制作見本・ポートフォリオ</h2>
+      </div>
+      
+      <div class="portfolio-nav">
+        <p>過去作品はこちらからご確認いただけます</p>
+        <div class="nav-buttons">
+          <a href="#" class="btn-link" target="_blank">X (Twitter)</a>
+          <a href="#" class="btn-link secondary" target="_blank">FANBOX</a>
+        </div>
+      </div>
 
-/* 画像・動画のドラッグ/右クリック防止 */
-img, video {
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  user-select: none;
-  pointer-events: auto;
-}
+      <div class="media-grid">
+        <div class="media-wrapper">
+          <img src="sample1.jpg" alt="作品見本1" class="clickable-media" oncontextmenu="return false;" ondragstart="return false;">
+          <div class="media-label">静止画スチル例</div>
+        </div>
+        <div class="media-wrapper">
+          <video class="clickable-media" muted loop playsinline oncontextmenu="return false;" ondragstart="return false;">
+            <source src="sample2.mp4" type="video/mp4">
+          </video>
+          <div class="media-label">動き・ポージング例（動画）</div>
+        </div>
+      </div>
+      <p class="note text-center">※画像・動画をクリックすると大画面でご確認いただけます。</p>
+    </section>
 
-/* ヘッダー・見出し装飾 */
-h1 {
-  font-size: 1.5rem;
-  color: #d64550;
-  text-align: center;
-  margin-bottom: 5px;
-}
+    <!-- 🎁 特典＆お知らせセクション -->
+    <section class="card-section info-card">
+      <div class="section-title">
+        <span>🌟</span>
+        <h2>特典案内＆ご注意事項</h2>
+      </div>
 
-h2 {
-  font-size: 1.15rem;
-  color: #333;
-  border-bottom: 2px dashed #ffb6c1;
-  padding-bottom: 8px;
-  margin-top: 30px;
-  margin-bottom: 15px;
-}
+      <div class="info-box benefit-box">
+        <h3>🎁 ご利用特典</h3>
+        <p><strong>リピーター様</strong> または <strong>SNS等で宣伝いただいた方</strong> には特典をお付けしています！</p>
+        <ul>
+          <li>Vlog風加工（1点サービス）</li>
+          <li>貫通処理（無料対応） 等</li>
+        </ul>
+      </div>
 
-h3 {
-  font-size: 1rem;
-  color: #d64550;
-  margin-top: 20px;
-}
+      <div class="info-box caution-box">
+        <h3>🔒 ポートフォリオ公開について</h3>
+        <p>FANBOX限定公開など、ポートフォリオ非公開をご希望の方は事前にお知らせいただくか、オプションの「実績非公開」をご選択ください。</p>
+      </div>
+    </section>
 
-/* メインヘッダー画像 */
-.header-img {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  margin-bottom: 20px;
-  display: block;
-}
+    <!-- 📝 お見積もりフォームセクション -->
+    <section class="card-section estimate-card">
+      <div class="section-title">
+        <span>📝</span>
+        <h2>お見積もりシミュレーター</h2>
+      </div>
 
-/* --- フォーム・選択肢の見易いカード風縦並び設定 --- */
-.radio-group, .checkbox-group {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 10px;
-}
+      <form id="estimateForm">
+        
+        <!-- 1. メインセット -->
+        <div class="form-group">
+          <h3>1. メインセット選択（いずれか1つ）</h3>
+          <div class="radio-group">
+            <label><input type="radio" name="mainSet" value="3000" checked> 背景持ち込みポージング指定セット（¥3,000〜）</label>
+            <label><input type="radio" name="mainSet" value="4000"> 季節かシュチュエーション指定ポージングおまかせセット（¥4,000〜）</label>
+            <label><input type="radio" name="mainSet" value="2000"> 全部持ち込みお写真馴染ませセット（¥2,000〜）</label>
+            <label><input type="radio" name="mainSet" value="2000"> VRCHATお写真レタッチセット（¥2,000〜）</label>
+            <label><input type="radio" name="mainSet" value="6000"> 完全こだわりセット（¥6,000〜）</label>
+            <label><input type="radio" name="mainSet" value="0"> セットなし（単品のみ希望）</label>
+          </div>
+        </div>
 
-/* 選択肢ひとつひとつの枠線カード */
-.radio-group label, .checkbox-group label {
-  display: flex;
-  align-items: center;
-  background-color: #fffafb;
-  border: 1.5px solid #ffd8e1;
-  padding: 12px 16px;
-  border-radius: 10px;
-  font-size: 0.95rem;
-  transition: all 0.2s ease;
-}
+        <!-- 2. 単品メニュー -->
+        <div class="form-group">
+          <h3>2. 単品メニュー（複数選択可）</h3>
+          <div class="checkbox-group">
+            <label><input type="checkbox" class="opt" value="2500"> キラキラスチルのみ(アップ) (+¥2,500〜)</label>
+            <label><input type="checkbox" class="opt" value="2000"> キラキラ無し各種 (+¥2,000〜)</label>
+            <label><input type="checkbox" class="opt" value="1200"> 立ち絵の撮影 (+¥1,200〜)</label>
+            <label><input type="checkbox" class="opt" value="2200"> 加筆立ち絵の撮影 (+¥2,200〜)</label>
+          </div>
+          <p class="note">※単品立ち絵の場合、表情差分1点につき +¥500 かかります。</p>
+        </div>
 
-.radio-group label:hover, .checkbox-group label:hover {
-  background-color: #fff0f3;
-  border-color: #ff9ebb;
-  transform: translateY(-1px);
-}
+        <!-- 3. オプション -->
+        <div class="form-group">
+          <h3>3. オプション</h3>
+          <div class="checkbox-group">
+            <label><input type="checkbox" class="opt" value="500"> 表情加筆 (+¥500)</label>
+            <label><input type="checkbox" class="opt" value="500"> 貫通処理 (+¥500)</label>
+            <label><input type="checkbox" class="opt" value="500"> 表情差分 (1点目無料 / 2点目以降+¥500)</label>
+            <label><input type="checkbox" class="opt" value="800"> 小物を持たせる (+¥800)</label>
+            <label><input type="checkbox" class="opt" value="800"> 加工した透過立ち絵 (+¥800)</label>
+            <label><input type="checkbox" class="opt" value="800"> 加筆が必要な背景処理 (+¥800)</label>
+            <label><input type="checkbox" class="opt" value="1500"> 3D小物追加 (+¥1,500)</label>
+            <label><input type="checkbox" class="opt" value="1500"> レイヤー別納品 (+¥1,500)</label>
+            <label><input type="checkbox" class="opt" value="500"> Vlog風色味加工 (+¥500)</label>
+            <label><input type="checkbox" class="opt" value="800"> キラキラスチルメイン(引き) (+¥800)</label>
+            <label><input type="checkbox" class="opt" value="2000"> 実績非公開 (+¥2,000)</label>
+          </div>
 
-.radio-group input, .checkbox-group input {
-  margin-right: 12px;
-  transform: scale(1.2);
-  accent-color: #e74c3c;
-}
+          <div class="select-group">
+            <span>お急ぎ便指定:</span>
+            <select id="express">
+              <option value="0">なし（通常納期）</option>
+              <option value="1500">お急ぎ納品 (+¥1,500)</option>
+              <option value="3000">超お急ぎ納品 (+¥3,000)</option>
+            </select>
+          </div>
 
-/* ドロップダウン・数字入力枠 */
-.select-group, .number-group {
-  margin-top: 15px;
-  background: #fffafb;
-  padding: 12px 16px;
-  border-radius: 10px;
-  border: 1.5px solid #ffd8e1;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 0.95rem;
-}
+          <div class="number-group">
+            <span>追加キャラクター人数 (+¥2,500/人):</span>
+            <input type="number" id="charCount" value="0" min="0" max="10">
+          </div>
+        </div>
 
-select, input[type="number"] {
-  padding: 6px 10px;
-  border-radius: 6px;
-  border: 1px solid #ffb6c1;
-  font-size: 0.95rem;
-  background-color: #fff;
-}
+        <!-- 💰 お見積もり結果 -->
+        <div class="result-box">
+          <div class="price-tax-excluded">概算お見積もり（税抜）: <span id="totalPrice">3,000</span> 円〜</div>
+          <div class="price-tax-included">お支払予想額（税込10%）: <span id="totalPriceTax">3,300</span> 円〜</div>
+        </div>
 
-/* 注意書き */
-.note {
-  font-size: 0.82rem;
-  color: #888;
-  margin-top: 8px;
-}
+        <div class="send-btn-wrapper">
+          <button type="button" id="sendEmailBtn" class="send-btn">💌 この内容でメールを作成する</button>
+        </div>
 
-/* --- 作品見本・画像グリッド --- */
-.media-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 15px;
-  margin-top: 15px;
-}
+      </form>
+    </section>
 
-.media-wrapper {
-  border-radius: 10px;
-  overflow: hidden;
-  background-color: #fff;
-  border: 1px solid #ffe5eb;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.03);
-}
+  </div>
 
-.media-grid img, .media-grid video {
-  width: 100%;
-  height: auto;
-  display: block;
-}
+  <!-- 🔍 拡大表示用モーダル -->
+  <div id="imageModal" class="modal-overlay">
+    <div class="modal-content-wrapper">
+      <span id="modalClose" class="modal-close-btn">&times;</span>
+    </div>
+  </div>
 
-.media-label {
-  font-weight: bold;
-  padding: 8px 0;
-  font-size: 0.85rem;
-  color: #666;
-  text-align: center;
-  background: #fff;
-  border-top: 1px solid #ffe5eb;
-}
-
-/* ポートフォリオナビボタン */
-.portfolio-nav {
-  margin-bottom: 20px;
-  background: #fff0f3;
-  padding: 12px 16px;
-  border-radius: 10px;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-}
-.portfolio-nav p {
-  margin: 0;
-  font-weight: bold;
-  font-size: 0.9rem;
-  color: #d64550;
-}
-.nav-buttons {
-  display: flex;
-  gap: 8px;
-}
-.btn-link {
-  display: inline-block;
-  padding: 7px 14px;
-  background-color: #2c3e50;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 6px;
-  font-size: 0.82rem;
-  font-weight: bold;
-}
-.btn-link.secondary {
-  background-color: #16a085;
-}
-
-/* 特典案内・例ボックス */
-.section, .example-box, .benefit-box {
-  background: #ffffff;
-  margin-bottom: 15px;
-}
-
-.benefit-box {
-  background-color: #fffafb;
-  border: 1px dashed #ffb6c1;
-  padding: 15px;
-  border-radius: 10px;
-  margin-top: 25px;
-}
-
-/* お見積もり結果表示ボックス */
-.result-box {
-  margin-top: 30px;
-  padding: 20px;
-  background: #fff0f3;
-  border: 2px solid #ff6b81;
-  border-radius: 12px;
-  text-align: center;
-}
-.price-tax-excluded {
-  font-size: 1rem;
-  color: #666;
-}
-.price-tax-included {
-  font-size: 1.6rem;
-  font-weight: bold;
-  color: #d64550;
-}
-
-.send-btn-wrapper {
-  text-align: center;
-  margin-top: 25px;
-}
-.send-btn {
-  padding: 14px 28px;
-  background-color: #ff6b81;
-  color: #fff;
-  border: none;
-  border-radius: 30px;
-  font-weight: bold;
-  font-size: 1.05rem;
-  box-shadow: 0 4px 12px rgba(255, 107, 129, 0.3);
-  transition: all 0.2s;
-}
-.send-btn:hover {
-  background-color: #ee5253;
-  transform: translateY(-2px);
-}
-
-/* 🔍 画像・動画拡大表示モーダル */
-.modal-overlay {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.88);
-  z-index: 9999;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  box-sizing: border-box;
-  backdrop-filter: blur(4px);
-}
-.modal-content-wrapper {
-  position: relative;
-  max-width: 90vw;
-  max-height: 90vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.modal-content-wrapper img, .modal-content-wrapper video {
-  max-width: 90vw;
-  max-height: 85vh;
-  object-fit: contain;
-  border-radius: 8px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-}
-.modal-close-btn {
-  position: absolute;
-  top: -40px;
-  right: 0;
-  color: #ffffff;
-  font-size: 32px;
-  font-weight: bold;
-  cursor: pointer;
-  user-select: none;
-}
+  <script src="script.js"></script>
+</body>
+</html>
