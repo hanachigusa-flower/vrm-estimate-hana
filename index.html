@@ -10,6 +10,7 @@
 
   <div class="container">
 
+    <!-- 🌸 ヘッダーセクション（※サイドGIFなし） -->
     <header class="header-card">
       <h1>🌸 3D 4K photo ご依頼・お見積もり</h1>
       <p class="subtitle">千草はな 制作依頼シミュレーター</p>
@@ -19,6 +20,7 @@
       </div>
     </header>
 
+    <!-- 🎨 1つ目のブロック：制作見本・ポートフォリオ -->
     <div class="section-with-gif">
       <div class="gif-side gif-left">
         <img src="はなぬい_ゆらゆらウインクループ.gif" alt="装飾GIF" class="protected-media">
@@ -31,6 +33,7 @@
           <h2>制作見本・ポートフォリオ</h2>
         </div>
         
+        <!-- 各種リンクボタン -->
         <div class="portfolio-nav">
           <p>過去作品・SNS・リンク集はこちらからご確認いただけます</p>
           <div class="nav-buttons">
@@ -40,6 +43,7 @@
           </div>
         </div>
 
+        <!-- 制作見本グリッド -->
         <div class="media-grid">
           <div class="media-wrapper">
             <div class="media-container" onclick="openModal('2026_06_夏用_3000_2.jpg', 'img')">
@@ -97,6 +101,7 @@
       </div>
     </div>
 
+    <!-- 🎁 2つ目のブロック：特典＆お知らせ -->
     <div class="section-with-gif">
       <div class="gif-side gif-left">
         <img src="GIF_フリフリ.gif" alt="装飾GIF" class="protected-media">
@@ -130,6 +135,7 @@
       </div>
     </div>
 
+    <!-- 📝 3つ目のブロック：お見積もりフォーム -->
     <div class="section-with-gif">
       <div class="gif-side gif-left">
         <img src="1.gif" alt="装飾GIF" class="protected-media">
@@ -144,18 +150,114 @@
 
         <form id="estimateForm">
           
+          <!-- 1. メインセット -->
           <div class="form-group">
             <h3>1. メインセット選択（いずれか1つ）</h3>
-            <div class="radio-group">
-              <label><input type="radio" name="mainSet" value="3000" checked> 背景持ち込みポージング指定セット (¥3,000〜)</label>
-              <label><input type="radio" name="mainSet" value="4000"> 季節かシチュエーション指定ポージングおまかせセット (¥4,000〜)</label>
-              <label><input type="radio" name="mainSet" value="2000"> 全部持ち込みお写真馴染ませセット (¥2,000〜)</label>
-              <label><input type="radio" name="mainSet" value="2000"> VRCHATお写真レタッチセット (¥2,000〜)</label>
-              <label><input type="radio" name="mainSet" value="6000"> 完全こだわりセット (¥6,000〜)</label>
-              <label><input type="radio" name="mainSet" value="0"> セットなし（単品のみ希望）</label>
+            
+            <!-- 💡 実績非公開等に関する事前案内 -->
+            <div class="set-notice-box">
+              ⚠️ <strong>実績非公開・限定公開について</strong><br>
+              実績非公開のほか、FANBOXやメンバーシップ限定などポートフォリオに掲載できない場合も、事前にご相談いただくかオプションの「実績非公開」をお選びください。
             </div>
+
+            <!-- 📦 共通納品内容の明瞭化ボックス -->
+            <div class="common-deliverables-box">
+              <div class="deliverables-header">✨ セット共通・基本納品内容（計4点＋透過2点＝計6データ納品）</div>
+              <ul class="deliverables-list">
+                <li>引きでのお写真 <strong>1点</strong></li>
+                <li>アップでのキラキラスチル <strong>1点</strong></li>
+                <li>使用した立ち絵（透過・サイズ大きめ） <strong>1点</strong></li>
+                <li>表情差分 <strong>1点 or 2点</strong></li>
+              </ul>
+              <div class="deliverables-subtext">※「VRChatお写真レタッチセット」「セットなし（単品）」を除く全セット共通の内容となります。</div>
+            </div>
+
+            <div class="radio-group card-radio-group">
+              <label class="set-card">
+                <input type="radio" name="mainSet" value="3000" checked>
+                <div class="set-card-content">
+                  <div class="set-title-price">
+                    <span class="set-title">背景持ち込み・ポージング指定セット</span>
+                    <span class="set-price">¥3,000〜</span>
+                  </div>
+                  <div class="set-desc">「こだわり背景とポーズが決まっている方に！」</div>
+                </div>
+              </label>
+
+              <label class="set-card">
+                <input type="radio" name="mainSet" value="4000">
+                <div class="set-card-content">
+                  <div class="set-title-price">
+                    <span class="set-title">季節・シチュエーション指定 ポージングおまかせセット</span>
+                    <span class="set-price">¥4,000〜</span>
+                  </div>
+                  <div class="set-desc">「テーマだけ決めて、構図やポーズをおまかせしたい方に！」</div>
+                </div>
+              </label>
+
+              <label class="set-card">
+                <input type="radio" name="mainSet" value="2000">
+                <div class="set-card-content">
+                  <div class="set-title-price">
+                    <span class="set-title">全部持ち込み お写真馴染ませセット</span>
+                    <span class="set-price">¥2,000〜</span>
+                  </div>
+                  <div class="set-desc">「お手元の画像を綺麗に馴染ませ補正！」</div>
+                </div>
+              </label>
+
+              <label class="set-card">
+                <input type="radio" name="mainSet" value="2000">
+                <div class="set-card-content">
+                  <div class="set-title-price">
+                    <span class="set-title">VRChat お写真レタッチセット</span>
+                    <span class="set-price">¥2,000〜</span>
+                  </div>
+                  <div class="set-desc">「VRChatの思い出の一枚をハイクオリティに仕上げます」</div>
+                </div>
+              </label>
+
+              <label class="set-card">
+                <input type="radio" name="mainSet" value="6000">
+                <div class="set-card-content">
+                  <div class="set-title-price">
+                    <span class="set-title">完全こだわりセット</span>
+                    <span class="set-price">¥6,000〜</span>
+                  </div>
+                  <div class="set-desc">「特別な一作に！背景・ポーズ・加工までとことんこだわりたい方に」</div>
+                  <div class="set-note">✨ ポージングやその他のリテイクを全体で5回まで無料対応！</div>
+                </div>
+              </label>
+
+              <label class="set-card simple-option">
+                <input type="radio" name="mainSet" value="0">
+                <div class="set-card-content">
+                  <div class="set-title-price">
+                    <span class="set-title">セットなし（単品のみ希望）</span>
+                    <span class="set-price">¥0</span>
+                  </div>
+                </div>
+              </label>
+            </div>
+
+            <!-- 💡 ご注文・計算例の紹介ボックス -->
+            <div class="example-box">
+              <div class="example-title">💡 ご注文・お見積もり例</div>
+              <p><strong>【季節・シチュエーション指定ポージングおまかせセット】で小物を追加した場合：</strong></p>
+              <ul>
+                <li>セット基本料金：4,000円</li>
+                <li>表情差分 1点：0円（無料）</li>
+                <li>小物を持たせる：+800円</li>
+              </ul>
+              <div class="example-total">合計：4,800円 ＋ 税（税込 5,280円）</div>
+              <div class="example-deliverables">
+                📦 <strong>納品内容：</strong>お写真差分含め4点 ＋ 立ち絵差分含め2点（合計6データ）
+              </div>
+            </div>
+
           </div>
 
+          <!-- 2. 単品メニュー -->
           <div class="form-group">
             <h3>2. 単品メニュー（複数選択可）</h3>
             <div class="checkbox-group">
@@ -167,6 +269,7 @@
             <p class="note">※単品立ち絵の場合、表情差分1点につき +¥500 かかります。</p>
           </div>
 
+          <!-- 3. オプション -->
           <div class="form-group">
             <h3>3. オプション</h3>
             <div class="checkbox-group">
@@ -200,6 +303,7 @@
             </div>
           </div>
 
+          <!-- 💰 お見積もり結果 -->
           <div class="result-box">
             <div class="price-tax-excluded">概算お見積もり（税抜）: <span id="totalPrice">3,000</span> 円〜</div>
             <div class="price-tax-included">お支払予想額（税込10%）: <span id="totalPriceTax">3,300</span> 円〜</div>
@@ -220,6 +324,7 @@
 
   </div>
 
+  <!-- 🔍 拡大表示用モーダル -->
   <div id="imageModal" class="modal-overlay" onclick="closeModal()">
     <div class="modal-content-wrapper" onclick="event.stopPropagation()">
       <span id="modalClose" class="modal-close-btn" onclick="closeModal()">&times;</span>
