@@ -8,6 +8,9 @@ body {
   line-height: 1.6;
   margin: 0;
   padding: 20px 10px 80px 10px;
+  -webkit-touch-callout: none; /* iOSの長押しメニュー無効化 */
+  -webkit-user-select: none;   /* テキスト・画像選択防止 */
+  user-select: none;
 }
 
 .container {
@@ -15,20 +18,41 @@ body {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 25px; /* 各カードごとの間隔 */
+  gap: 25px;
 }
 
-/* 🖱️ 手持ちのアニメーションカーソル設定 */
-/* ※ `my-cursor.ani` 部分をご自身のファイル名に変更してください */
-a, button, input[type="radio"], input[type="checkbox"], select, label, .clickable-media {
+/* 🖱️ カーソル設定 */
+a, button, input[type="radio"], input[type="checkbox"], select, label, .media-container {
   cursor: url('my-cursor.ani'), pointer !important;
 }
 
-img, video {
+/* 🛡️ 画像・動画の物理保護構造 */
+.media-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  display: block;
+}
+
+.protected-media {
+  width: 100%;
+  height: auto;
+  display: block;
+  pointer-events: none; /* マウスイベントを貫通させて直クリックを不可にする */
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   user-select: none;
-  pointer-events: auto;
+}
+
+/* 透明保護シールド（画像の上に覆いかぶさる透明な膜） */
+.media-shield {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0); /* 完全透明 */
+  z-index: 10;
 }
 
 /* --- 📦 各機能ごとの独立したカード枠 --- */
@@ -40,7 +64,6 @@ img, video {
   border: 1px solid #ffedf0;
 }
 
-/* ヘッダーカード */
 .header-card {
   text-align: center;
   background: linear-gradient(135deg, #ffffff 0%, #fff5f7 100%);
@@ -55,14 +78,7 @@ h1 {
   color: #888;
   margin: 0 0 15px 0;
 }
-.header-img {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  display: block;
-}
 
-/* セクションタイトル */
 .section-title {
   display: flex;
   align-items: center;
@@ -111,20 +127,21 @@ h3 {
 .btn-link {
   display: inline-block;
   padding: 6px 12px;
-  background-color: #2c3e50;
   color: #fff;
   text-decoration: none;
   border-radius: 6px;
   font-size: 0.8rem;
   font-weight: bold;
+  transition: all 0.2s;
 }
-.btn-link.secondary {
-  background-color: #16a085;
-}
+.btn-link.litlink { background-color: #2bca81; }
+.btn-link.portfolio { background-color: #7d5fff; }
+.btn-link.twitter { background-color: #1da1f2; }
+.btn-link:hover { opacity: 0.85; transform: translateY(-2px); }
 
 .media-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 12px;
 }
 .media-wrapper {
@@ -132,11 +149,6 @@ h3 {
   overflow: hidden;
   background-color: #fff;
   border: 1px solid #ffe5eb;
-}
-.media-grid img, .media-grid video {
-  width: 100%;
-  height: auto;
-  display: block;
 }
 .media-label {
   font-weight: bold;
@@ -148,7 +160,7 @@ h3 {
   border-top: 1px solid #ffe5eb;
 }
 
-/* --- 🎁 特典＆お知らせ（分かりやすい紹介ボックス） --- */
+/* --- 🎁 特典＆お知らせ --- */
 .info-box {
   padding: 15px;
   border-radius: 10px;
@@ -279,7 +291,7 @@ select, input[type="number"] {
   transform: translateY(-2px);
 }
 
-/* 🔍 画像・動画拡大表示モーダル */
+/* 🔍 拡大表示モーダル */
 .modal-overlay {
   display: none;
   position: fixed;
@@ -303,12 +315,17 @@ select, input[type="number"] {
   justify-content: center;
   align-items: center;
 }
-.modal-content-wrapper img, .modal-content-wrapper video {
+.modal-media-wrapper {
+  position: relative;
+  display: inline-block;
+}
+.modal-media-wrapper img, .modal-media-wrapper video {
   max-width: 90vw;
   max-height: 85vh;
   object-fit: contain;
   border-radius: 8px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  pointer-events: none;
 }
 .modal-close-btn {
   position: absolute;
@@ -320,26 +337,3 @@ select, input[type="number"] {
   cursor: pointer;
   user-select: none;
 }
-/* 画像・動画のDL防止対策 */
-.protected-media {
-  pointer-events: none; /* ドラッグや右クリック判定を完全に無効化 */
-  -webkit-touch-callout: none; /* iOS長押しメニュー禁止 */
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.media-container {
-  position: relative;
-  cursor: pointer;
-  overflow: hidden;
-  border-radius: 8px;
-}
-
-/* ナビゲーションボタン */
-.btn-link.litlink { background-color: #2bca81; }
-.btn-link.portfolio { background-color: #7d5fff; }
-.btn-link.twitter { background-color: #1da1f2; }
-.btn-link:hover { opacity: 0.85; transform: translateY(-2px); }
