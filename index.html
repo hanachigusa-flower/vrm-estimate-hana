@@ -14,7 +14,8 @@
     <header class="header-card">
       <h1>🌸 3D 4K photo ご依頼・お見積もり</h1>
       <p class="subtitle">千草はな 制作依頼シミュレーター</p>
-      <img src="header.jpg" alt="ヘッダー画像" class="header-img clickable-media" oncontextmenu="return false;" ondragstart="return false;">
+      <!-- お手持ちのヘッダー画像ファイル名（header.jpg等）を指定してください -->
+      <img src="X用4月.jpg" alt="千草はな 3D 4K photo" class="header-img clickable-media" oncontextmenu="return false;" ondragstart="return false;">
     </header>
 
     <!-- 🎨 作例・ギャラリーセクション -->
@@ -24,22 +25,34 @@
         <h2>制作見本・ポートフォリオ</h2>
       </div>
       
+      <!-- 各種リンクボタン（Lit.link / PORTFOLIO / X / FANBOX） -->
       <div class="portfolio-nav">
-        <p>過去作品はこちらからご確認いただけます</p>
+        <p>作品集・SNS・リンク集はこちら</p>
         <div class="nav-buttons">
-          <a href="#" class="btn-link" target="_blank">X (Twitter)</a>
-          <a href="#" class="btn-link secondary" target="_blank">FANBOX</a>
+          <a href="https://lit.link/" class="btn-link litlink" target="_blank" rel="noopener noreferrer">Lit.link</a>
+          <a href="#" class="btn-link portfolio" target="_blank" rel="noopener noreferrer">PORTFOLIO</a>
+          <a href="#" class="btn-link twitter" target="_blank" rel="noopener noreferrer">X (Twitter)</a>
+          <a href="#" class="btn-link fanbox" target="_blank" rel="noopener noreferrer">FANBOX</a>
         </div>
       </div>
 
+      <!-- 元の制作見本グリッド（画像・動画） -->
       <div class="media-grid">
         <div class="media-wrapper">
-          <img src="sample1.jpg" alt="作品見本1" class="clickable-media" oncontextmenu="return false;" ondragstart="return false;">
+          <img src="sample1.jpg" alt="静止画スチル例" class="clickable-media" oncontextmenu="return false;" ondragstart="return false;">
           <div class="media-label">静止画スチル例</div>
         </div>
         <div class="media-wrapper">
+          <img src="sample2.jpg" alt="キラキラスチル例" class="clickable-media" oncontextmenu="return false;" ondragstart="return false;">
+          <div class="media-label">キラキラスチル例</div>
+        </div>
+        <div class="media-wrapper">
+          <img src="sample3.jpg" alt="立ち絵撮影例" class="clickable-media" oncontextmenu="return false;" ondragstart="return false;">
+          <div class="media-label">立ち絵撮影例</div>
+        </div>
+        <div class="media-wrapper">
           <video class="clickable-media" muted loop playsinline oncontextmenu="return false;" ondragstart="return false;">
-            <source src="sample2.mp4" type="video/mp4">
+            <source src="sample4.mp4" type="video/mp4">
           </video>
           <div class="media-label">動き・ポージング例（動画）</div>
         </div>
@@ -65,7 +78,7 @@
 
       <div class="info-box caution-box">
         <h3>🔒 ポートフォリオ公開について</h3>
-        <p>FANBOX限定公開など、ポートフォリオ非公開をご希望の方は事前にお知らせいただくか、オプションの「実績非公開」をご選択ください。</p>
+        <p>※FANBOX限定などポートフォリオ非公開希望の方は事前にご相談いただくか、「実績非公開」をご選択ください。</p>
       </div>
     </section>
 
@@ -82,11 +95,11 @@
         <div class="form-group">
           <h3>1. メインセット選択（いずれか1つ）</h3>
           <div class="radio-group">
-            <label><input type="radio" name="mainSet" value="3000" checked> 背景持ち込みポージング指定セット（¥3,000〜）</label>
-            <label><input type="radio" name="mainSet" value="4000"> 季節かシュチュエーション指定ポージングおまかせセット（¥4,000〜）</label>
-            <label><input type="radio" name="mainSet" value="2000"> 全部持ち込みお写真馴染ませセット（¥2,000〜）</label>
-            <label><input type="radio" name="mainSet" value="2000"> VRCHATお写真レタッチセット（¥2,000〜）</label>
-            <label><input type="radio" name="mainSet" value="6000"> 完全こだわりセット（¥6,000〜）</label>
+            <label><input type="radio" name="mainSet" value="3000" checked> 背景持ち込みポージング指定セット (¥3,000〜)</label>
+            <label><input type="radio" name="mainSet" value="4000"> 季節かシュチュエーション指定ポージングおまかせセット (¥4,000〜)</label>
+            <label><input type="radio" name="mainSet" value="2000"> 全部持ち込みお写真馴染ませセット (¥2,000〜)</label>
+            <label><input type="radio" name="mainSet" value="2000"> VRCHATお写真レタッチセット (¥2,000〜)</label>
+            <label><input type="radio" name="mainSet" value="6000"> 完全こだわりセット (¥6,000〜)</label>
             <label><input type="radio" name="mainSet" value="0"> セットなし（単品のみ希望）</label>
           </div>
         </div>
