@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
       e.preventDefault();
 
       // ✉️ ご自身のメールアドレスを設定してください
-      const yourEmail = "hana.chigusa@gmail.com"; 
+      const yourEmail = "your-email@example.com"; 
 
       const priceEx = document.getElementById('totalPrice') ? document.getElementById('totalPrice').innerText : "0";
       const priceIn = document.getElementById('totalPriceTax') ? document.getElementById('totalPriceTax').innerText : "0";
@@ -112,7 +112,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // 閉じるボタンまたは背景クリックでモーダルを閉じる
   if (modalClose) {
     modalClose.addEventListener('click', function() {
       modal.style.display = 'none';
