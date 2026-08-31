@@ -14,7 +14,7 @@ body {
 }
 
 .container {
-  max-width: 680px;
+  max-width: 900px; /* サイドGIF配置用に幅を広げています */
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -27,7 +27,7 @@ a, button, input[type="radio"], input[type="checkbox"], select, label, .media-co
 }
 
 /* 🛡️ 画像・動画の物理保護構造 */
-.media-container {
+.media-container, .gif-side {
   position: relative;
   overflow: hidden;
   border-radius: 8px;
@@ -44,7 +44,7 @@ a, button, input[type="radio"], input[type="checkbox"], select, label, .media-co
   user-select: none;
 }
 
-/* 透明保護シールド（画像の上に覆いかぶさる透明な膜） */
+/* 透明保護シールド */
 .media-shield {
   position: absolute;
   top: 0;
@@ -55,6 +55,36 @@ a, button, input[type="radio"], input[type="checkbox"], select, label, .media-co
   z-index: 10;
 }
 
+/* --- 🌸 サイドGIF配置ブロックレイアウト --- */
+.section-with-gif {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  position: relative;
+}
+
+.section-with-gif .card-section {
+  flex: 1;
+  max-width: 680px;
+}
+
+/* サイドGIFのサイズ・表示調整 */
+.gif-side {
+  width: 90px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 画面幅が狭い場合（スマホ等）はサイドGIFを非表示にして崩れを防止 */
+@media (max-width: 820px) {
+  .gif-side {
+    display: none;
+  }
+}
+
 /* --- 📦 各機能ごとの独立したカード枠 --- */
 .header-card, .card-section {
   background: #ffffff;
@@ -62,9 +92,13 @@ a, button, input[type="radio"], input[type="checkbox"], select, label, .media-co
   border-radius: 16px;
   box-shadow: 0 4px 15px rgba(220, 120, 140, 0.08);
   border: 1px solid #ffedf0;
+  box-sizing: border-box;
 }
 
 .header-card {
+  max-width: 680px;
+  margin: 0 auto;
+  width: 100%;
   text-align: center;
   background: linear-gradient(135deg, #ffffff 0%, #fff5f7 100%);
 }
@@ -139,7 +173,7 @@ h3 {
 .btn-link.twitter { background-color: #1da1f2; }
 .btn-link:hover { opacity: 0.85; transform: translateY(-2px); }
 
-/* 🌟 ここを2列（2つずつ並ぶ）に変更しました 🌟 */
+/* 2列グリッド表示 */
 .media-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -166,7 +200,6 @@ h3 {
   border-top: 1px solid #ffe5eb;
 }
 
-/* スマホ等で画面幅が狭い時もきれいに収まる調整 */
 @media (max-width: 480px) {
   .media-grid {
     gap: 8px;
