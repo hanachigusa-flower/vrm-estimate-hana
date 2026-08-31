@@ -26,7 +26,7 @@ img, video {
 }
 
 /* 🖱️ 手持ちのアニメーションカーソル設定 */
-/* ※ `my-cursor.ani` をご自身のお持ちのファイル名に変更してください */
+/* ※ `通常の選択.ani` をご自身のお持ちのファイル名に変更してください */
 a, button, input[type="radio"], input[type="checkbox"], select, label, .clickable-media {
   cursor: url('my-cursor.ani'), pointer !important;
 }
