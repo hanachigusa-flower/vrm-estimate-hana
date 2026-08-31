@@ -90,27 +90,11 @@ function sendEmail() {
   // ブラウザで必ずGmailの作成画面（Web版）を開くURLを生成
   const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${RECIPIENT_EMAIL}&su=${subject}&body=${body}`;
 
-  // 新しいタブ（ウィンドウ）でGmailを開く
+  // 新しいタブでGmailを開く
   window.open(gmailUrl, '_blank');
 }
 
-// イベントリスナーの設定
-document.addEventListener('DOMContentLoaded', () => {
-  // フォーム内の変更で自動計算
-  document.addEventListener('change', calculateTotal);
-  document.addEventListener('input', calculateTotal);
-
-  // メール作成ボタンのクリックイベント
-  const sendBtn = document.getElementById('sendEmailBtn');
-  if (sendBtn) {
-    sendBtn.addEventListener('click', sendEmail);
-  }
-
-  // 初回計算
-  calculateTotal();
-});
-
-// 🔍 拡大モーダルの制御（画像保護仕様）
+// 🔍 拡大モーダルの制御（強力保護構造）
 function openModal(src, type) {
   const modal = document.getElementById('imageModal');
   const container = document.getElementById('modalMediaContainer');
@@ -122,8 +106,6 @@ function openModal(src, type) {
     const img = document.createElement('img');
     img.src = src;
     img.className = 'protected-media';
-    img.oncontextmenu = () => false;
-    img.ondragstart = () => false;
     container.appendChild(img);
   } else if (type === 'video') {
     const video = document.createElement('video');
@@ -131,9 +113,13 @@ function openModal(src, type) {
     video.controls = true;
     video.autoplay = true;
     video.className = 'protected-media';
-    video.oncontextmenu = () => false;
     container.appendChild(video);
   }
+
+  // モーダル側にも透明シールドを追加
+  const shield = document.createElement('div');
+  shield.className = 'media-shield';
+  container.appendChild(shield);
 
   modal.style.display = 'flex';
 }
@@ -145,9 +131,25 @@ function closeModal() {
   if (modal) modal.style.display = 'none';
 }
 
-// ページ全体の画像右クリック・ドラッグ保護
-document.addEventListener('contextmenu', e => {
-  if (e.target.tagName === 'IMG' || e.target.tagName === 'VIDEO') {
+// イベントリスナーの設定
+document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('change', calculateTotal);
+  document.addEventListener('input', calculateTotal);
+
+  const sendBtn = document.getElementById('sendEmailBtn');
+  if (sendBtn) {
+    sendBtn.addEventListener('click', sendEmail);
+  }
+
+  calculateTotal();
+});
+
+// 🛡️ ページ全体の右クリック禁止・ドラッグ禁止・ショートカット禁止
+document.addEventListener('contextmenu', e => e.preventDefault());
+document.addEventListener('dragstart', e => e.preventDefault());
+document.addEventListener('keydown', e => {
+  // Sキー保存 (Ctrl+S / Cmd+S) をブロック
+  if ((e.ctrlKey || e.metaKey) && (e.key === 's' || e.key === 'S')) {
     e.preventDefault();
   }
 });
