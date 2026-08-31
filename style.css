@@ -1,7 +1,18 @@
 @charset "UTF-8";
 
+/* 全体の最大幅を固定して中央寄せ（前の見やすいレイアウトに戻しました） */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
 body {
   padding-bottom: 80px !important;
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  color: #333;
+  background-color: #fcfcfc;
 }
 
 img, video {
@@ -15,19 +26,18 @@ img, video {
 }
 
 /* 🖱️ 手持ちのアニメーションカーソル設定 */
-/* ※ `通常の選択.ani` をご自身のお持ちのファイル名に変更してください */
+/* ※ `my-cursor.ani` をご自身のお持ちのファイル名に変更してください */
 a, button, input[type="radio"], input[type="checkbox"], select, label, .clickable-media {
   cursor: url('my-cursor.ani'), pointer !important;
 }
 
-/* 🖼️ メインヘッダー画像（通常表示サイズを適正に制限） */
+/* 🖼️ メインヘッダー画像 */
 .header-img {
   width: 100%;
-  max-width: 600px; /* 通常時は最大600pxまでに制限 */
   height: auto;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  margin: 0 auto 25px auto;
+  margin-bottom: 25px;
   display: block;
   transition: transform 0.2s, opacity 0.2s;
 }
@@ -36,10 +46,10 @@ a, button, input[type="radio"], input[type="checkbox"], select, label, .clickabl
   transform: scale(1.005);
 }
 
-/* 作品見本・動画グリッド（カード型サイズ制限） */
+/* 作品見本・動画グリッド（2列レイアウト） */
 .media-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
   margin-top: 15px;
   width: 100%;
@@ -59,12 +69,12 @@ a, button, input[type="radio"], input[type="checkbox"], select, label, .clickabl
   box-shadow: 0 8px 20px rgba(0,0,0,0.12);
 }
 
-/* 通常表示時の画像・動画サイズ制限 */
+/* 通常表示時の画像・動画 */
 .media-grid img, .media-grid video {
   width: 100% !important;
-  max-height: 300px; /* 通常時は高さを抑えてスッキリ表示 */
-  object-fit: cover;
+  height: auto !important;
   display: block;
+  object-fit: cover;
 }
 
 .media-label {
@@ -160,14 +170,14 @@ a, button, input[type="radio"], input[type="checkbox"], select, label, .clickabl
   transform: translateY(-1px);
 }
 
-/* 🔍 画像・動画クリック時の拡大表示モーダル */
+/* 🔍 クリックした時だけ全画面で大画面表示（モーダル） */
 .modal-overlay {
   display: none;
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0.88);
   z-index: 9999;
   justify-content: center;
