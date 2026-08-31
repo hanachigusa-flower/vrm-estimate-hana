@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>3D 4K photo ご依頼・お見積もり | 千種はな</title>
+  <title>3D 4K photo ご依頼・お見積もり | 千草はな</title>
   <link rel="stylesheet" href="style.css">
   <style>
     /* 画像・動画の保存（ダウンロード）防止スタイル */
@@ -17,7 +17,7 @@
       pointer-events: auto;
     }
 
-    /* レイアウト・メディア表示用スタイル */
+    /* メインビジュアルヘッダー */
     .header-img {
       width: 100%;
       height: auto;
@@ -25,18 +25,20 @@
       box-shadow: 0 4px 15px rgba(0,0,0,0.1);
       margin-bottom: 25px;
     }
+
+    /* 🖼 サンプル画像・動画のグリッド（大きく表示されるよう320px以上に調整） */
     .media-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 15px;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
       margin-top: 15px;
     }
     .media-wrapper {
       position: relative;
-      border-radius: 8px;
+      border-radius: 10px;
       overflow: hidden;
       background-color: #f9f9f9;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     }
     .media-grid img, .media-grid video {
       width: 100%;
@@ -45,11 +47,12 @@
     }
     .media-label {
       font-weight: bold;
-      padding: 8px 0;
-      font-size: 0.85rem;
-      color: #555;
+      padding: 10px 0;
+      font-size: 0.95rem;
+      color: #444;
       text-align: center;
       background: #fff;
+      border-top: 1px solid #eee;
     }
 
     /* ナビゲーション・案内リンク用スタイル */
@@ -71,33 +74,44 @@
       color: #2c3e50;
       font-size: 0.95rem;
     }
-    .portfolio-nav a {
+    .nav-buttons {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .btn-link {
       display: inline-block;
-      padding: 10px 18px;
+      padding: 9px 16px;
       background-color: #2c3e50;
       color: #ffffff;
       text-decoration: none;
       border-radius: 6px;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       font-weight: bold;
-      transition: background-color 0.2s;
+      transition: background-color 0.2s, transform 0.1s;
     }
-    .portfolio-nav a:hover {
+    .btn-link:hover {
       background-color: #34495e;
+      transform: translateY(-1px);
+    }
+    .btn-link.secondary {
+      background-color: #16a085;
+    }
+    .btn-link.secondary:hover {
+      background-color: #1abc9c;
     }
   </style>
 </head>
-<body oncontextmenu="return false;"> <!-- ページ全体の右クリック保存防止 -->
-
-  <div class="container">
+<body oncontextmenu="return false;"> <div class="container">
     
-    <!-- 案内用ナビゲーションヘッダー -->
     <div class="portfolio-nav">
-      <p>その他のポートフォリオはこちら✨</p>
-      <a href="https://lit.link/Chigusahana" target="_top">← リットリンクへ戻る</a>
+      <p>その他の作品・リンクはこちら✨</p>
+      <div class="nav-buttons">
+        <a href="https://lit.link/Chigusahana" target="_top" class="btn-link">← リットリンクへ戻る</a>
+        <a href="https://xfolio.jp/portfolio/Chigusa_Hana" target="_blank" class="btn-link secondary">🎨 xfolio ポートフォリオ</a>
+      </div>
     </div>
 
-    <!-- ヘッダー画像 -->
     <img src="X用4月.jpg" alt="メインビジュアル" class="header-img" ondragstart="return false;">
 
     <header>
@@ -106,7 +120,6 @@
       <p class="sub-text">3D(VRM)をお持ちの方へ、素敵なお写真をおつくりしています。</p>
     </header>
 
-    <!-- 🎁 全セット共通の納品内容カード -->
     <section class="section package-info">
       <h2>🎁 全セット共通の納品内容</h2>
       <p class="package-intro">どのセットを選んでも、<strong>豪華なセット内容</strong>でお届けします！</p>
@@ -128,11 +141,9 @@
       </p>
     </section>
 
-    <!-- 🖼 サンプル画像・動画ギャラリー（ダウンロード防止付き） -->
     <section class="section">
       <h2>🖼 納品イメージ＆レタッチ見本</h2>
       
-      <!-- 2026夏用セット見本 -->
       <h3>【2026夏用セット 納品見本】</h3>
       <div class="media-grid">
         <div class="media-wrapper">
@@ -145,8 +156,7 @@
         </div>
       </div>
 
-      <!-- 立ち絵加筆 Before/After -->
-      <h3 style="margin-top:20px;">【立ち絵加筆レタッチ（Before / After）】</h3>
+      <h3 style="margin-top:25px;">【立ち絵加筆レタッチ（Before / After）】</h3>
       <div class="media-grid">
         <div class="media-wrapper">
           <img src="加筆前立ち絵1.png" alt="加筆前立ち絵" ondragstart="return false;">
@@ -158,8 +168,7 @@
         </div>
       </div>
 
-      <!-- 動画 Before/After -->
-      <h3 style="margin-top:20px;">【演出動画（Before / After）】</h3>
+      <h3 style="margin-top:25px;">【演出動画（Before / After）】</h3>
       <div class="media-grid">
         <div class="media-wrapper">
           <video controls controlsList="nodownload" autoplay loop muted playsinline ondragstart="return false;">
@@ -178,7 +187,6 @@
       </div>
     </section>
 
-    <!-- 💡 計算例カード -->
     <section class="section example-box">
       <h3>💡 ご依頼・お見積もり例</h3>
       <div class="example-content">
@@ -193,9 +201,7 @@
       </div>
     </section>
 
-    <!-- 💰 自動お見積もりフォーム（精密計算版） -->
     <form id="estimateForm">
-      <!-- 1. メインセット選択 -->
       <section class="section">
         <h2>1. メインセット選択（いずれか1つ）</h2>
         <div class="radio-group">
@@ -203,72 +209,4 @@
           <label><input type="radio" name="mainSet" value="4000"> <strong>季節かシュチュエーション指定ポージングおまかせセット</strong> (¥4,000〜)</label>
           <label><input type="radio" name="mainSet" value="2000"> <strong>全部持ち込みお写真馴染ませセット</strong> (¥2,000〜)</label>
           <label><input type="radio" name="mainSet" value="2000"> <strong>VRCHATお写真レタッチセット</strong> (¥2,000〜)</label>
-          <label><input type="radio" name="mainSet" value="6000"> <strong>完全こだわりセット</strong> (¥6,000〜)</label>
-          <label><input type="radio" name="mainSet" value="0"> セットなし（単品のみ希望）</label>
-        </div>
-      </section>
-
-      <!-- 2. 単品メニュー -->
-      <section class="section">
-        <h2>2. 単品メニュー（複数選択可）</h2>
-        <div class="checkbox-group">
-          <label><input type="checkbox" class="opt" value="2500"> キラキラスチルのみ(アップ) (+¥2,500〜)</label>
-          <label><input type="checkbox" class="opt" value="2000"> キラキラ無し各種 (+¥2,000〜)</label>
-          <label><input type="checkbox" class="opt" value="1200"> 立ち絵の撮影 (+¥1,200〜)</label>
-          <label><input type="checkbox" class="opt" value="2200"> 加筆立ち絵の撮影 (+¥2,200〜)</label>
-        </div>
-        <p class="note">※単品立ち絵の場合、表情差分1点につき +¥500 かかります。</p>
-      </section>
-
-      <!-- 3. オプション -->
-      <section class="section">
-        <h2>3. オプション</h2>
-        <div class="checkbox-group">
-          <label><input type="checkbox" class="opt" value="500"> 表情加筆 (+¥500)</label>
-          <label><input type="checkbox" class="opt" value="500"> 貫通処理 (+¥500)</label>
-          <label><input type="checkbox" class="opt" value="500"> 表情差分 (1点目無料 / 2点目以降+¥500)</label>
-          <label><input type="checkbox" class="opt" value="800"> 小物を持たせる (+¥800)</label>
-          <label><input type="checkbox" class="opt" value="800"> 加工した透過立ち絵 (+¥800)</label>
-          <label><input type="checkbox" class="opt" value="800"> 加筆が必要な背景処理 (+¥800)</label>
-          <label><input type="checkbox" class="opt" value="1500"> 3D小物追加 (+¥1,500)</label>
-          <label><input type="checkbox" class="opt" value="1500"> レイヤー別納品 (+¥1,500)</label>
-          <label><input type="checkbox" class="opt" value="500"> Vlog風色味加工 (+¥500)</label>
-          <label><input type="checkbox" class="opt" value="800"> キラキラスチルメイン(引き) (+¥800)</label>
-          <label><input type="checkbox" class="opt" value="2000"> 実績非公開 (+¥2,000)</label>
-        </div>
-
-        <div class="select-group">
-          <label for="express"><strong>お急ぎ便指定:</strong></label>
-          <select id="express" class="opt-select">
-            <option value="0">なし（通常納期）</option>
-            <option value="300">2週間 (+¥300)</option>
-            <option value="1000">1週間 (+¥1,000)</option>
-            <option value="3000">3日 (+¥3,000)</option>
-            <option value="5000">1日 (+¥5,000)</option>
-          </select>
-        </div>
-
-        <div class="number-group">
-          <label for="charCount"><strong>追加キャラクター人数 (+¥2,500/人):</strong></label>
-          <input type="number" id="charCount" min="0" value="0">
-        </div>
-      </section>
-
-      <!-- 特典案内 -->
-      <section class="section benefit-box">
-        <h3>🌟 特典案内</h3>
-        <p>リピーター様・SNS等で宣伝いただいた方には特典をお付けしています！（例：Vlog風加工1点、貫通処理サービス等）</p>
-        <p class="small">※FANBOX限定などポートフォリオ非公開希望の方は事前にご相談いただくか、「実績非公開」をご選択ください。</p>
-      </section>
-
-      <!-- 見積もり結果表示エリア -->
-      <div class="result-box">
-        <p>概算見積もり金額（税抜）</p>
-        <div class="price"><span id="totalPrice">3,000</span> 円〜</div>
-      </div>
-    </form>
-  </div>
-
-  <script src="script.js"></script>
-</body>
-</html>
+          <label><input type="radio" name="mainSet" value="6000
