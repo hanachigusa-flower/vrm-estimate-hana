@@ -1,4 +1,3 @@
-// 金額の計算と税込表示の自動計算関数
 function calculateTotal() {
   let total = 0;
 
@@ -20,45 +19,45 @@ function calculateTotal() {
     total += parseInt(express.value, 10) || 0;
   }
 
-  // 4. 追加キャラ人数の計算 (1人につき 2,500円)
+  // 4. 追加キャラ人数の計算
   const charCount = document.getElementById('charCount');
   if (charCount) {
     const count = parseInt(charCount.value, 10) || 0;
     total += count * 2500;
   }
 
-  // 税抜表示の更新
+  // 税抜価格の更新
   const totalPriceElem = document.getElementById('totalPrice');
   if (totalPriceElem) {
     totalPriceElem.innerText = total.toLocaleString();
   }
 
-  // 税込表示（10%）の計算と更新
-  const taxIncluded = Math.floor(total * 1.1);
+  // 税込価格（10%）の計算と更新
   const totalPriceTaxElem = document.getElementById('totalPriceTax');
   if (totalPriceTaxElem) {
+    const taxIncluded = Math.floor(total * 1.1);
     totalPriceTaxElem.innerText = taxIncluded.toLocaleString();
   }
 }
 
-// 画面読み込み完了後にイベントを設定
+// 画面読み込み後の処理
 document.addEventListener('DOMContentLoaded', function() {
   const form = document.getElementById('estimateForm');
   if (form) {
-    // フォーム内のクリックや変更をすべて検知して再計算
+    // フォーム全体の変更をすべてキャッチして再計算
     form.addEventListener('change', calculateTotal);
-    form.addEventListener('click', calculateTotal);
     form.addEventListener('input', calculateTotal);
+    form.addEventListener('click', calculateTotal);
   }
 
   // メール作成ボタンの処理
   const sendEmailBtn = document.getElementById('sendEmailBtn');
   if (sendEmailBtn) {
     sendEmailBtn.addEventListener('click', function(e) {
-      e.preventDefault(); // フォーム送信の標準動作を防止
+      e.preventDefault();
 
-      // ✉️ ここにご自身のメールアドレスを入力してください
-      const yourEmail = "hana.chigusa@gmail.com"; 
+      // ✉️ 千草はな様のメールアドレスを設定してください
+      const yourEmail = "your-email@example.com"; 
 
       const priceEx = document.getElementById('totalPrice') ? document.getElementById('totalPrice').innerText : "0";
       const priceIn = document.getElementById('totalPriceTax') ? document.getElementById('totalPriceTax').innerText : "0";
@@ -93,12 +92,10 @@ document.addEventListener('DOMContentLoaded', function() {
         `【ご要望・補足など】\n` +
         `（ここにポージングのご希望や気になる点をご記入ください）\n`;
 
-      // リンク作成とクリックの実行（ポップアップブロック対策）
-      const mailtoUrl = `mailto:${yourEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      window.location.href = mailtoUrl;
+      window.location.href = `mailto:${yourEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     });
   }
 
-  // 初期計算の実行
+  // 初期計算
   calculateTotal();
 });
