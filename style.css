@@ -3,18 +3,17 @@
 /* --- 全体基本設定 --- */
 body {
   font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
-  /* 🌸 背景画像のパターン敷き詰め設定 🌸 */
-  background-image: url('ハート_02-03[3000x3000].png'); /* ※拡張子が.jpgの場合は変更してください */
-  background-repeat: repeat;             /* 画像を上下左右に敷き詰める */
-  background-size: 300px auto;           /* パターンの大きさ調整 */
-  background-attachment: fixed;          /* スクロールしても背景を固定 */
-  background-color: #f7f3f5;             /* 画像読み込み前のベース色 */
+  background-image: url('レースとリボン_01-19[3000x3000].png');
+  background-repeat: repeat;
+  background-size: 300px auto;
+  background-attachment: fixed;
+  background-color: #f7f3f5;
   color: #444;
   line-height: 1.6;
   margin: 0;
   padding: 20px 10px 80px 10px;
-  -webkit-touch-callout: none; /* iOSの長押しメニュー無効化 */
-  -webkit-user-select: none;   /* テキスト・画像選択防止 */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
   user-select: none;
 }
 
@@ -49,7 +48,6 @@ a, button, input[type="radio"], input[type="checkbox"], select, label, .media-co
   user-select: none;
 }
 
-/* 透明保護シールド */
 .media-shield {
   position: absolute;
   top: 0;
@@ -74,7 +72,6 @@ a, button, input[type="radio"], input[type="checkbox"], select, label, .media-co
   max-width: 680px;
 }
 
-/* サイドGIFのサイズ・表示調整 */
 .gif-side {
   width: 90px;
   flex-shrink: 0;
@@ -83,7 +80,6 @@ a, button, input[type="radio"], input[type="checkbox"], select, label, .media-co
   justify-content: center;
 }
 
-/* スマホ等はサイドGIFを非表示 */
 @media (max-width: 820px) {
   .gif-side {
     display: none;
@@ -178,7 +174,6 @@ h3 {
 .btn-link.twitter { background-color: #1da1f2; }
 .btn-link:hover { opacity: 0.85; transform: translateY(-2px); }
 
-/* 2列グリッド表示 */
 .media-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -487,10 +482,11 @@ select, input[type="number"] {
   margin-bottom: 4px;
 }
 
+/* 🌟 セット名を太文字にして視認性アップ */
 .set-title {
-  font-weight: bold;
-  font-size: 0.95rem;
-  color: #333;
+  font-weight: 800;
+  font-size: 0.98rem;
+  color: #222;
 }
 
 .set-price {
@@ -519,7 +515,6 @@ select, input[type="number"] {
   border: 1.5px dashed #ffd1dc;
   border-radius: 12px;
   padding: 14px 16px;
-  margin-top: 15px;
   font-size: 0.85rem;
   color: #444;
 }
