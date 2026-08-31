@@ -6,12 +6,10 @@
   <title>3D 4K photo ご依頼・お見積もり | 千草はな</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    /* 全体レイアウトの余白調整 */
     body {
       padding-bottom: 80px !important;
     }
 
-    /* 画像・動画の保存（ダウンロード）防止スタイル */
     img, video {
       -webkit-touch-callout: none;
       -webkit-user-select: none;
@@ -22,7 +20,6 @@
       pointer-events: auto;
     }
 
-    /* メインビジュアルヘッダー */
     .header-img {
       width: 100%;
       height: auto;
@@ -31,7 +28,6 @@
       margin-bottom: 25px;
     }
 
-    /* サンプル画像・動画のグリッド */
     .media-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -60,7 +56,6 @@
       border-top: 1px solid #eee;
     }
 
-    /* ナビゲーション・案内リンク用スタイル */
     .portfolio-nav {
       margin-bottom: 25px;
       background: #ffffff;
@@ -105,7 +100,6 @@
       background-color: #1abc9c;
     }
 
-    /* 下部見積もり結果エリアの表示 */
     .result-box {
       margin-top: 30px;
       padding: 20px;
@@ -125,7 +119,6 @@
       color: #e74c3c;
     }
 
-    /* メール送信ボタン */
     .send-btn-wrapper {
       text-align: center;
       margin-top: 20px;
@@ -147,11 +140,10 @@
     }
   </style>
 </head>
-<body oncontextmenu="return false;"> <!-- ページ全体の右クリック保存防止 -->
+<body oncontextmenu="return false;">
 
   <div class="container">
     
-    <!-- 案内用ナビゲーションヘッダー -->
     <div class="portfolio-nav">
       <p>その他の作品・リンクはこちら✨</p>
       <div class="nav-buttons">
@@ -160,7 +152,6 @@
       </div>
     </div>
 
-    <!-- ヘッダー画像 -->
     <img src="X用4月.jpg" alt="メインビジュアル" class="header-img" ondragstart="return false;">
 
     <header>
@@ -169,7 +160,6 @@
       <p class="sub-text">3D(VRM)をお持ちの方へ、素敵なお写真をおつくりしています。</p>
     </header>
 
-    <!-- 🎁 全セット共通の納品内容カード -->
     <section class="section package-info">
       <h2>🎁 全セット共通の納品内容</h2>
       <p class="package-intro">どのセットを選んでも、<strong>豪華なセット内容</strong>でお届けします！</p>
@@ -191,11 +181,9 @@
       </p>
     </section>
 
-    <!-- 🖼 サンプル画像・動画ギャラリー -->
     <section class="section">
       <h2>🖼 納品イメージ＆レタッチ見本</h2>
       
-      <!-- 2026夏用セット見本 -->
       <h3>【2026夏用セット 納品見本】</h3>
       <div class="media-grid">
         <div class="media-wrapper">
@@ -208,7 +196,6 @@
         </div>
       </div>
 
-      <!-- 立ち絵加筆 Before/After -->
       <h3 style="margin-top:25px;">【立ち絵加筆レタッチ（Before / After）】</h3>
       <div class="media-grid">
         <div class="media-wrapper">
@@ -221,7 +208,6 @@
         </div>
       </div>
 
-      <!-- 動画 Before/After -->
       <h3 style="margin-top:25px;">【演出動画（Before / After）】</h3>
       <div class="media-grid">
         <div class="media-wrapper">
@@ -241,7 +227,6 @@
       </div>
     </section>
 
-    <!-- 💡 計算例カード -->
     <section class="section example-box">
       <h3>💡 ご依頼・お見積もり例</h3>
       <div class="example-content">
@@ -256,9 +241,7 @@
       </div>
     </section>
 
-    <!-- 💰 自動お見積もりフォーム -->
-    <form id="estimateForm">
-      <!-- 1. メインセット選択 -->
+    <form id="estimateForm" onsubmit="return false;">
       <section class="section">
         <h2>1. メインセット選択（いずれか1つ）</h2>
         <div class="radio-group">
@@ -271,7 +254,6 @@
         </div>
       </section>
 
-      <!-- 2. 単品メニュー -->
       <section class="section">
         <h2>2. 単品メニュー（複数選択可）</h2>
         <div class="checkbox-group">
@@ -283,7 +265,6 @@
         <p class="note">※単品立ち絵の場合、表情差分1点につき +¥500 かかります。</p>
       </section>
 
-      <!-- 3. オプション -->
       <section class="section">
         <h2>3. オプション</h2>
         <div class="checkbox-group">
@@ -317,21 +298,18 @@
         </div>
       </section>
 
-      <!-- 特典案内 -->
       <section class="section benefit-box">
         <h3>🌟 特典案内</h3>
         <p>リピーター様・SNS等で宣伝いただいた方には特典をお付けしています！（例：Vlog風加工1点、貫通処理サービス等）</p>
         <p class="small">※FANBOX限定などポートフォリオ非公開希望の方は事前にご相談いただくか、「実績非公開」をご選択ください。</p>
       </section>
 
-      <!-- 見積もり結果表示エリア -->
       <div class="result-box">
         <p style="margin-bottom: 8px; font-weight: bold;">概算お見積もり金額</p>
         <div class="price-tax-excluded">税抜：<span id="totalPrice">3,000</span> 円〜</div>
         <div class="price-tax-included">税込（10%）：<span id="totalPriceTax">3,300</span> 円〜</div>
       </div>
 
-      <!-- メール作成ボタン -->
       <div class="send-btn-wrapper">
         <button type="button" id="sendEmailBtn" class="send-btn">
           ✉️ この見積もり内容でメールを作成する
