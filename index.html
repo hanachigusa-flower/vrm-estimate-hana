@@ -6,7 +6,7 @@
   <title>3D 4K photo ご依頼・お見積もり | 千草はな</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body oncontextmenu="return false;">
 
   <div class="container">
 
@@ -14,8 +14,9 @@
     <header class="header-card">
       <h1>🌸 3D 4K photo ご依頼・お見積もり</h1>
       <p class="subtitle">千草はな 制作依頼シミュレーター</p>
-      <div class="media-container">
-        <img src="X用4月.jpg" alt="千草はな 3D 4K photo" class="header-img protected-media" oncontextmenu="return false;" ondragstart="return false;">
+      <div class="media-container header-container">
+        <img src="X用4月.jpg" alt="千草はな 3D 4K photo" class="protected-media">
+        <div class="media-shield"></div>
       </div>
     </header>
 
@@ -41,12 +42,14 @@
         <div class="media-wrapper">
           <div class="media-container" onclick="openModal('2026_06_夏用_3000_2.jpg', 'img')">
             <img src="2026_06_夏用_3000_2.jpg" alt="引きの写真例" class="protected-media">
+            <div class="media-shield"></div>
           </div>
           <div class="media-label">引きの写真例</div>
         </div>
         <div class="media-wrapper">
           <div class="media-container" onclick="openModal('2026_06_夏用_3000_3.jpg', 'img')">
             <img src="2026_06_夏用_3000_3.jpg" alt="アップの写真例" class="protected-media">
+            <div class="media-shield"></div>
           </div>
           <div class="media-label">アップの写真例</div>
         </div>
@@ -55,6 +58,7 @@
             <video class="protected-media" muted loop playsinline autoplay>
               <source src="before_after_1.mp4" type="video/mp4">
             </video>
+            <div class="media-shield"></div>
           </div>
           <div class="media-label">ビフォーアフター動画①</div>
         </div>
@@ -63,23 +67,26 @@
             <video class="protected-media" muted loop playsinline autoplay>
               <source src="before_after_2.mp4" type="video/mp4">
             </video>
+            <div class="media-shield"></div>
           </div>
           <div class="media-label">ビフォーアフター動画②</div>
         </div>
         <div class="media-wrapper">
           <div class="media-container" onclick="openModal('加筆前立ち絵1.png', 'img')">
             <img src="加筆前立ち絵1.png" alt="加筆前立ち絵" class="protected-media">
+            <div class="media-shield"></div>
           </div>
           <div class="media-label">加筆前立ち絵</div>
         </div>
         <div class="media-wrapper">
           <div class="media-container" onclick="openModal('加筆立ち絵1.png', 'img')">
             <img src="加筆立ち絵1.png" alt="加筆立ち絵" class="protected-media">
+            <div class="media-shield"></div>
           </div>
           <div class="media-label">加筆立ち絵</div>
         </div>
       </div>
-      <p class="note text-center">※画像・動画をクリックすると拡大表示でご確認いただけます。（ダウンロード・保存禁止）</p>
+      <p class="note text-center">※画像・動画をクリックすると拡大表示でご確認いただけます。（無断転載・保存禁止）</p>
     </section>
 
     <!-- 🎁 特典＆お知らせセクション -->
@@ -191,7 +198,7 @@
   <div id="imageModal" class="modal-overlay" onclick="closeModal()">
     <div class="modal-content-wrapper" onclick="event.stopPropagation()">
       <span id="modalClose" class="modal-close-btn" onclick="closeModal()">&times;</span>
-      <div id="modalMediaContainer"></div>
+      <div id="modalMediaContainer" class="modal-media-wrapper"></div>
     </div>
   </div>
 
