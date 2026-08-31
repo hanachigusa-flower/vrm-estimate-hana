@@ -1,61 +1,145 @@
-/* --- 元の基本スタイル --- */
+@charset "UTF-8";
+
+/* --- 全体レイアウト --- */
 body {
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  background-color: #f4f7f6;
-  color: #333;
+  font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+  background-color: #fff9fb;
+  color: #444;
   line-height: 1.6;
   margin: 0;
-  padding: 20px 0 80px 0;
+  padding: 20px 10px 80px 10px;
 }
 
 .container {
-  max-width: 600px;
+  max-width: 680px;
   margin: 0 auto;
-  background: #fff;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  background: #ffffff;
+  padding: 30px 25px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(231, 76, 60, 0.08);
+  border: 1px solid #ffeef2;
 }
 
 /* 🖱️ 手持ちのアニメーションカーソル設定 */
-/* ※ `my-cursor.ani` 部分をご自身のファイル名（.ani や .gif など）に変更してください */
+/* ※ `通常の選択.ani` 部分をご自身のファイル名（.ani / .gif など）に変更してください */
 a, button, input[type="radio"], input[type="checkbox"], select, label, .clickable-media {
   cursor: url('my-cursor.ani'), pointer !important;
 }
 
-/* 画像・動画のダウンロード防止 */
+/* 画像・動画のドラッグ/右クリック防止 */
 img, video {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
   pointer-events: auto;
+}
+
+/* ヘッダー・見出し装飾 */
+h1 {
+  font-size: 1.5rem;
+  color: #d64550;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+h2 {
+  font-size: 1.15rem;
+  color: #333;
+  border-bottom: 2px dashed #ffb6c1;
+  padding-bottom: 8px;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+h3 {
+  font-size: 1rem;
+  color: #d64550;
+  margin-top: 20px;
 }
 
 /* メインヘッダー画像 */
 .header-img {
   width: 100%;
   height: auto;
-  border-radius: 8px;
+  border-radius: 12px;
   margin-bottom: 20px;
   display: block;
 }
 
-/* 作品見本・動画グリッド */
+/* --- フォーム・選択肢の見易いカード風縦並び設定 --- */
+.radio-group, .checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* 選択肢ひとつひとつの枠線カード */
+.radio-group label, .checkbox-group label {
+  display: flex;
+  align-items: center;
+  background-color: #fffafb;
+  border: 1.5px solid #ffd8e1;
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.radio-group label:hover, .checkbox-group label:hover {
+  background-color: #fff0f3;
+  border-color: #ff9ebb;
+  transform: translateY(-1px);
+}
+
+.radio-group input, .checkbox-group input {
+  margin-right: 12px;
+  transform: scale(1.2);
+  accent-color: #e74c3c;
+}
+
+/* ドロップダウン・数字入力枠 */
+.select-group, .number-group {
+  margin-top: 15px;
+  background: #fffafb;
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: 1.5px solid #ffd8e1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.95rem;
+}
+
+select, input[type="number"] {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #ffb6c1;
+  font-size: 0.95rem;
+  background-color: #fff;
+}
+
+/* 注意書き */
+.note {
+  font-size: 0.82rem;
+  color: #888;
+  margin-top: 8px;
+}
+
+/* --- 作品見本・画像グリッド --- */
 .media-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 15px;
   margin-top: 15px;
 }
 
 .media-wrapper {
-  border-radius: 8px;
+  border-radius: 10px;
   overflow: hidden;
-  background-color: #fafafa;
-  border: 1px solid #eee;
+  background-color: #fff;
+  border: 1px solid #ffe5eb;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.03);
 }
 
 .media-grid img, .media-grid video {
@@ -68,18 +152,18 @@ img, video {
   font-weight: bold;
   padding: 8px 0;
   font-size: 0.85rem;
-  color: #555;
+  color: #666;
   text-align: center;
   background: #fff;
-  border-top: 1px solid #eee;
+  border-top: 1px solid #ffe5eb;
 }
 
-/* ポートフォリオナビ */
+/* ポートフォリオナビボタン */
 .portfolio-nav {
   margin-bottom: 20px;
-  background: #f8f9fa;
-  padding: 12px 15px;
-  border-radius: 8px;
+  background: #fff0f3;
+  padding: 12px 16px;
+  border-radius: 10px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -90,6 +174,7 @@ img, video {
   margin: 0;
   font-weight: bold;
   font-size: 0.9rem;
+  color: #d64550;
 }
 .nav-buttons {
   display: flex;
@@ -97,25 +182,39 @@ img, video {
 }
 .btn-link {
   display: inline-block;
-  padding: 6px 12px;
+  padding: 7px 14px;
   background-color: #2c3e50;
   color: #fff;
   text-decoration: none;
-  border-radius: 4px;
-  font-size: 0.8rem;
+  border-radius: 6px;
+  font-size: 0.82rem;
   font-weight: bold;
 }
 .btn-link.secondary {
   background-color: #16a085;
 }
 
-/* お見積もり表示 */
-.result-box {
-  margin-top: 25px;
+/* 特典案内・例ボックス */
+.section, .example-box, .benefit-box {
+  background: #ffffff;
+  margin-bottom: 15px;
+}
+
+.benefit-box {
+  background-color: #fffafb;
+  border: 1px dashed #ffb6c1;
   padding: 15px;
-  background: #fff5f5;
-  border: 2px solid #e74c3c;
-  border-radius: 8px;
+  border-radius: 10px;
+  margin-top: 25px;
+}
+
+/* お見積もり結果表示ボックス */
+.result-box {
+  margin-top: 30px;
+  padding: 20px;
+  background: #fff0f3;
+  border: 2px solid #ff6b81;
+  border-radius: 12px;
   text-align: center;
 }
 .price-tax-excluded {
@@ -123,26 +222,32 @@ img, video {
   color: #666;
 }
 .price-tax-included {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: bold;
-  color: #e74c3c;
+  color: #d64550;
 }
 
 .send-btn-wrapper {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 25px;
 }
 .send-btn {
-  padding: 12px 24px;
-  background-color: #e74c3c;
+  padding: 14px 28px;
+  background-color: #ff6b81;
   color: #fff;
   border: none;
-  border-radius: 6px;
+  border-radius: 30px;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 1.05rem;
+  box-shadow: 0 4px 12px rgba(255, 107, 129, 0.3);
+  transition: all 0.2s;
+}
+.send-btn:hover {
+  background-color: #ee5253;
+  transform: translateY(-2px);
 }
 
-/* 🔍 画像・動画クリック時の拡大表示モーダル */
+/* 🔍 画像・動画拡大表示モーダル */
 .modal-overlay {
   display: none;
   position: fixed;
@@ -170,15 +275,15 @@ img, video {
   max-width: 90vw;
   max-height: 85vh;
   object-fit: contain;
-  border-radius: 6px;
+  border-radius: 8px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 .modal-close-btn {
   position: absolute;
-  top: -35px;
+  top: -40px;
   right: 0;
   color: #ffffff;
-  font-size: 30px;
+  font-size: 32px;
   font-weight: bold;
   cursor: pointer;
   user-select: none;
