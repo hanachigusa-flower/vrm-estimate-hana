@@ -1,20 +1,29 @@
-@charset "UTF-8";
-
-/* 全体の最大幅を固定して中央寄せ（前の見やすいレイアウトに戻しました） */
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-  box-sizing: border-box;
-}
-
+/* --- 元の基本スタイル --- */
 body {
-  padding-bottom: 80px !important;
-  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background-color: #f4f7f6;
   color: #333;
-  background-color: #fcfcfc;
+  line-height: 1.6;
+  margin: 0;
+  padding: 20px 0 80px 0;
 }
 
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+/* 🖱️ 手持ちのアニメーションカーソル設定 */
+/* ※ `my-cursor.ani` 部分をご自身のファイル名（.ani や .gif など）に変更してください */
+a, button, input[type="radio"], input[type="checkbox"], select, label, .clickable-media {
+  cursor: url('my-cursor.ani'), pointer !important;
+}
+
+/* 画像・動画のダウンロード防止 */
 img, video {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -25,128 +34,96 @@ img, video {
   pointer-events: auto;
 }
 
-/* 🖱️ 手持ちのアニメーションカーソル設定 */
-/* ※ `通常の選択.ani` をご自身のお持ちのファイル名に変更してください */
-a, button, input[type="radio"], input[type="checkbox"], select, label, .clickable-media {
-  cursor: url('my-cursor.ani'), pointer !important;
-}
-
-/* 🖼️ メインヘッダー画像 */
+/* メインヘッダー画像 */
 .header-img {
   width: 100%;
   height: auto;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  margin-bottom: 25px;
+  border-radius: 8px;
+  margin-bottom: 20px;
   display: block;
-  transition: transform 0.2s, opacity 0.2s;
-}
-.header-img:hover {
-  opacity: 0.95;
-  transform: scale(1.005);
 }
 
-/* 作品見本・動画グリッド（2列レイアウト） */
+/* 作品見本・動画グリッド */
 .media-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
   margin-top: 15px;
-  width: 100%;
 }
 
 .media-wrapper {
-  position: relative;
-  border-radius: 10px;
+  border-radius: 8px;
   overflow: hidden;
-  background-color: #f9f9f9;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  width: 100%;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-.media-wrapper:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  background-color: #fafafa;
+  border: 1px solid #eee;
 }
 
-/* 通常表示時の画像・動画 */
 .media-grid img, .media-grid video {
-  width: 100% !important;
-  height: auto !important;
+  width: 100%;
+  height: auto;
   display: block;
-  object-fit: cover;
 }
 
 .media-label {
   font-weight: bold;
-  padding: 10px 0;
-  font-size: 0.95rem;
-  color: #444;
+  padding: 8px 0;
+  font-size: 0.85rem;
+  color: #555;
   text-align: center;
   background: #fff;
   border-top: 1px solid #eee;
 }
 
+/* ポートフォリオナビ */
 .portfolio-nav {
-  margin-bottom: 25px;
-  background: #ffffff;
-  padding: 15px 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  margin-bottom: 20px;
+  background: #f8f9fa;
+  padding: 12px 15px;
+  border-radius: 8px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  gap: 10px;
 }
 .portfolio-nav p {
   margin: 0;
   font-weight: bold;
-  color: #2c3e50;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
 }
 .nav-buttons {
   display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
+  gap: 8px;
 }
 .btn-link {
   display: inline-block;
-  padding: 9px 16px;
+  padding: 6px 12px;
   background-color: #2c3e50;
-  color: #ffffff;
+  color: #fff;
   text-decoration: none;
-  border-radius: 6px;
-  font-size: 0.88rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
   font-weight: bold;
-  transition: background-color 0.2s;
-}
-.btn-link:hover {
-  background-color: #34495e;
 }
 .btn-link.secondary {
   background-color: #16a085;
 }
-.btn-link.secondary:hover {
-  background-color: #1abc9c;
-}
 
-/* お見積もり結果表示ボックス */
+/* お見積もり表示 */
 .result-box {
-  margin-top: 30px;
-  padding: 20px;
-  background: #fff3f3;
+  margin-top: 25px;
+  padding: 15px;
+  background: #fff5f5;
   border: 2px solid #e74c3c;
-  border-radius: 12px;
+  border-radius: 8px;
   text-align: center;
 }
 .price-tax-excluded {
-  font-size: 1.1rem;
-  color: #555;
-  margin-bottom: 5px;
+  font-size: 1rem;
+  color: #666;
 }
 .price-tax-included {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   font-weight: bold;
   color: #e74c3c;
 }
@@ -156,21 +133,16 @@ a, button, input[type="radio"], input[type="checkbox"], select, label, .clickabl
   margin-top: 20px;
 }
 .send-btn {
-  padding: 14px 28px;
+  padding: 12px 24px;
   background-color: #e74c3c;
-  color: white;
+  color: #fff;
   border: none;
-  border-radius: 8px;
+  border-radius: 6px;
   font-weight: bold;
-  font-size: 1.05rem;
-  transition: background-color 0.2s, transform 0.1s;
-}
-.send-btn:hover {
-  background-color: #c0392b;
-  transform: translateY(-1px);
+  font-size: 1rem;
 }
 
-/* 🔍 クリックした時だけ全画面で大画面表示（モーダル） */
+/* 🔍 画像・動画クリック時の拡大表示モーダル */
 .modal-overlay {
   display: none;
   position: fixed;
@@ -184,7 +156,7 @@ a, button, input[type="radio"], input[type="checkbox"], select, label, .clickabl
   align-items: center;
   padding: 20px;
   box-sizing: border-box;
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(4px);
 }
 .modal-content-wrapper {
   position: relative;
@@ -198,20 +170,16 @@ a, button, input[type="radio"], input[type="checkbox"], select, label, .clickabl
   max-width: 90vw;
   max-height: 85vh;
   object-fit: contain;
-  border-radius: 8px;
+  border-radius: 6px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 .modal-close-btn {
   position: absolute;
-  top: -40px;
+  top: -35px;
   right: 0;
   color: #ffffff;
-  font-size: 32px;
+  font-size: 30px;
   font-weight: bold;
   cursor: pointer;
   user-select: none;
-  transition: color 0.2s;
-}
-.modal-close-btn:hover {
-  color: #ff6b81;
 }
