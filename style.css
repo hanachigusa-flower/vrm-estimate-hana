@@ -3,7 +3,12 @@
 /* --- 全体基本設定 --- */
 body {
   font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
-  background-color: #f7f3f5;
+  /* 🌸 背景画像のパターン敷き詰め設定 🌸 */
+  background-image: url('レースとリボン_01-19[3000x3000].png'); 
+  background-repeat: repeat;             /* 画像を上下左右に敷き詰める */
+  background-size: 300px auto;           /* パターンの大きさ調整 */
+  background-attachment: fixed;          /* スクロールしても背景を固定 */
+  background-color: #f7f3f5;             /* 画像読み込み前のベース色 */
   color: #444;
   line-height: 1.6;
   margin: 0;
