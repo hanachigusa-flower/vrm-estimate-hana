@@ -14,7 +14,9 @@
     <header class="header-card">
       <h1>🌸 3D 4K photo ご依頼・お見積もり</h1>
       <p class="subtitle">千草はな 制作依頼シミュレーター</p>
-      <img src="X用4月.jpg" alt="千草はな 3D 4K photo" class="header-img clickable-media" oncontextmenu="return false;" ondragstart="return false;">
+      <div class="media-container">
+        <img src="X用4月.jpg" alt="千草はな 3D 4K photo" class="header-img protected-media" oncontextmenu="return false;" ondragstart="return false;">
+      </div>
     </header>
 
     <!-- 🎨 作例・ギャラリーセクション -->
@@ -24,7 +26,7 @@
         <h2>制作見本・ポートフォリオ</h2>
       </div>
       
-      <!-- 各種リンクボタン（Lit.link / PORTFOLIO / X） -->
+      <!-- 各種リンクボタン -->
       <div class="portfolio-nav">
         <p>過去作品・SNS・リンク集はこちらからご確認いただけます</p>
         <div class="nav-buttons">
@@ -34,38 +36,50 @@
         </div>
       </div>
 
-      <!-- 指定ファイル名による制作見本グリッド -->
+      <!-- 制作見本グリッド -->
       <div class="media-grid">
         <div class="media-wrapper">
-          <img src="2026_06_夏用_3000_2.jpg" alt="引きの写真例" class="clickable-media" oncontextmenu="return false;" ondragstart="return false;">
+          <div class="media-container" onclick="openModal('2026_06_夏用_3000_2.jpg', 'img')">
+            <img src="2026_06_夏用_3000_2.jpg" alt="引きの写真例" class="protected-media">
+          </div>
           <div class="media-label">引きの写真例</div>
         </div>
         <div class="media-wrapper">
-          <img src="2026_06_夏用_3000_3.jpg" alt="アップの写真例" class="clickable-media" oncontextmenu="return false;" ondragstart="return false;">
+          <div class="media-container" onclick="openModal('2026_06_夏用_3000_3.jpg', 'img')">
+            <img src="2026_06_夏用_3000_3.jpg" alt="アップの写真例" class="protected-media">
+          </div>
           <div class="media-label">アップの写真例</div>
         </div>
         <div class="media-wrapper">
-          <video class="clickable-media" muted loop playsinline oncontextmenu="return false;" ondragstart="return false;">
-            <source src="before_after_1.mp4" type="video/mp4">
-          </video>
+          <div class="media-container" onclick="openModal('before_after_1.mp4', 'video')">
+            <video class="protected-media" muted loop playsinline autoplay>
+              <source src="before_after_1.mp4" type="video/mp4">
+            </video>
+          </div>
           <div class="media-label">ビフォーアフター動画①</div>
         </div>
         <div class="media-wrapper">
-          <video class="clickable-media" muted loop playsinline oncontextmenu="return false;" ondragstart="return false;">
-            <source src="before_after_2.mp4" type="video/mp4">
-          </video>
+          <div class="media-container" onclick="openModal('before_after_2.mp4', 'video')">
+            <video class="protected-media" muted loop playsinline autoplay>
+              <source src="before_after_2.mp4" type="video/mp4">
+            </video>
+          </div>
           <div class="media-label">ビフォーアフター動画②</div>
         </div>
         <div class="media-wrapper">
-          <img src="加筆前立ち絵1.png" alt="加筆前立ち絵" class="clickable-media" oncontextmenu="return false;" ondragstart="return false;">
+          <div class="media-container" onclick="openModal('加筆前立ち絵1.png', 'img')">
+            <img src="加筆前立ち絵1.png" alt="加筆前立ち絵" class="protected-media">
+          </div>
           <div class="media-label">加筆前立ち絵</div>
         </div>
         <div class="media-wrapper">
-          <img src="加筆立ち絵1.png" alt="加筆立ち絵" class="clickable-media" oncontextmenu="return false;" ondragstart="return false;">
+          <div class="media-container" onclick="openModal('加筆立ち絵1.png', 'img')">
+            <img src="加筆立ち絵1.png" alt="加筆立ち絵" class="protected-media">
+          </div>
           <div class="media-label">加筆立ち絵</div>
         </div>
       </div>
-      <p class="note text-center">※画像・動画をクリックすると大画面でご確認いただけます。</p>
+      <p class="note text-center">※画像・動画をクリックすると拡大表示でご確認いただけます。（ダウンロード・保存禁止）</p>
     </section>
 
     <!-- 🎁 特典＆お知らせセクション -->
@@ -86,7 +100,7 @@
 
       <div class="info-box caution-box">
         <h3>🔒 ポートフォリオ公開について</h3>
-        <p>※FANBOX限定などポートフォリオ非公開希望の方は事前にご相談いただくか、「実績非公開」をご選択ください。</p>
+        <p>※ポートフォリオ非公開希望の方は「実績非公開」をご選択ください。</p>
       </div>
     </section>
 
@@ -104,7 +118,7 @@
           <h3>1. メインセット選択（いずれか1つ）</h3>
           <div class="radio-group">
             <label><input type="radio" name="mainSet" value="3000" checked> 背景持ち込みポージング指定セット (¥3,000〜)</label>
-            <label><input type="radio" name="mainSet" value="4000"> 季節かシュチュエーション指定ポージングおまかせセット (¥4,000〜)</label>
+            <label><input type="radio" name="mainSet" value="4000"> 季節かシチュエーション指定ポージングおまかせセット (¥4,000〜)</label>
             <label><input type="radio" name="mainSet" value="2000"> 全部持ち込みお写真馴染ませセット (¥2,000〜)</label>
             <label><input type="radio" name="mainSet" value="2000"> VRCHATお写真レタッチセット (¥2,000〜)</label>
             <label><input type="radio" name="mainSet" value="6000"> 完全こだわりセット (¥6,000〜)</label>
@@ -137,7 +151,7 @@
             <label><input type="checkbox" class="opt" value="1500"> 3D小物追加 (+¥1,500)</label>
             <label><input type="checkbox" class="opt" value="1500"> レイヤー別納品 (+¥1,500)</label>
             <label><input type="checkbox" class="opt" value="500"> Vlog風色味加工 (+¥500)</label>
-            <label><input type="checkbox" class="opt" value="800"> キラキラスチルメイン(引き) (+¥800)</label>
+            <label><input type="checkbox" class="opt" value="800"> キラキラスチルメイン(アップよりも引き) (+¥800)</label>
             <label><input type="checkbox" class="opt" value="2000"> 実績非公開 (+¥2,000)</label>
           </div>
 
@@ -145,8 +159,10 @@
             <span>お急ぎ便指定:</span>
             <select id="express">
               <option value="0">なし（通常納期）</option>
-              <option value="1500">お急ぎ納品 (+¥1,500)</option>
-              <option value="3000">超お急ぎ納品 (+¥3,000)</option>
+              <option value="300">お急ぎ便 2週間 (+¥300)</option>
+              <option value="1000">お急ぎ便 1週間 (+¥1,000)</option>
+              <option value="3000">お急ぎ便 3日 (+¥3,000)</option>
+              <option value="5000">お急ぎ便 1日 (+¥5,000)</option>
             </select>
           </div>
 
@@ -172,9 +188,10 @@
   </div>
 
   <!-- 🔍 拡大表示用モーダル -->
-  <div id="imageModal" class="modal-overlay">
-    <div class="modal-content-wrapper">
-      <span id="modalClose" class="modal-close-btn">&times;</span>
+  <div id="imageModal" class="modal-overlay" onclick="closeModal()">
+    <div class="modal-content-wrapper" onclick="event.stopPropagation()">
+      <span id="modalClose" class="modal-close-btn" onclick="closeModal()">&times;</span>
+      <div id="modalMediaContainer"></div>
     </div>
   </div>
 
