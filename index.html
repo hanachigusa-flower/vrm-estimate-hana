@@ -20,7 +20,12 @@
       pointer-events: auto;
     }
 
-    /* メインヘッダー画像（横幅いっぱいに大きく表示） */
+    /* 🖱 リンクやボタン hover 時のアニメーションカーソル指定 */
+    a, button, input[type="radio"], input[type="checkbox"], select, label, .clickable-media {
+      cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><style>@keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.2); } 100% { transform: scale(1); } } .sparkle { animation: pulse 1s infinite; transform-origin: center; fill: %23ff6b81; }</style><path class="sparkle" d="M16 2 L19 11 L28 14 L19 17 L16 26 L13 17 L4 14 L13 11 Z"/><circle cx="23" cy="7" r="2" fill="%23ffd166"/><circle cx="9" cy="23" r="2" fill="%234ecdc4"/></svg>') 16 16, pointer !important;
+    }
+
+    /* メインヘッダー画像 */
     .header-img {
       width: 100%;
       max-width: 100%;
@@ -29,9 +34,14 @@
       box-shadow: 0 4px 15px rgba(0,0,0,0.1);
       margin-bottom: 25px;
       display: block;
+      transition: transform 0.2s, opacity 0.2s;
+    }
+    .header-img:hover {
+      opacity: 0.95;
+      transform: scale(1.005);
     }
 
-    /* 作品見本・動画グリッド（画面幅に合わせて大きく並べる） */
+    /* 作品見本・動画グリッド */
     .media-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -47,9 +57,14 @@
       background-color: #f9f9f9;
       box-shadow: 0 4px 12px rgba(0,0,0,0.08);
       width: 100%;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .media-wrapper:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
     }
 
-    /* グリッド内の画像を100%幅で大きく表示 */
+    /* グリッド内の画像・動画 */
     .media-grid img, .media-grid video {
       width: 100% !important;
       height: auto !important;
@@ -143,12 +158,57 @@
       border-radius: 8px;
       font-weight: bold;
       font-size: 1.05rem;
-      cursor: pointer;
       transition: background-color 0.2s, transform 0.1s;
     }
     .send-btn:hover {
       background-color: #c0392b;
       transform: translateY(-1px);
+    }
+
+    /* 🔍 画像拡大表示用モーダル（ポップアップ）CSS */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.85);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      box-sizing: border-box;
+      backdrop-filter: blur(5px);
+    }
+    .modal-content-wrapper {
+      position: relative;
+      max-width: 90vw;
+      max-height: 90vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-content-wrapper img, .modal-content-wrapper video {
+      max-width: 90vw;
+      max-height: 85vh;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+    .modal-close-btn {
+      position: absolute;
+      top: -40px;
+      right: 0;
+      color: #ffffff;
+      font-size: 32px;
+      font-weight: bold;
+      cursor: pointer;
+      user-select: none;
+      transition: color 0.2s;
+    }
+    .modal-close-btn:hover {
+      color: #ff6b81;
     }
   </style>
 </head>
@@ -164,7 +224,8 @@
       </div>
     </div>
 
-    <img src="X用4月.jpg" alt="メインビジュアル" class="header-img" ondragstart="return false;">
+    <!-- メイン画像（クリックで拡大） -->
+    <img src="X用4月.jpg" alt="メインビジュアル" class="header-img clickable-media" ondragstart="return false;">
 
     <header>
       <h1>【3D 4Kお写真ご依頼】</h1>
@@ -194,16 +255,16 @@
     </section>
 
     <section class="section">
-      <h2>🖼 納品イメージ＆レタッチ見本</h2>
+      <h2>🖼 納品イメージ＆レタッチ見本 <span style="font-size:0.8rem; font-weight:normal; color:#888;">（クリックで拡大表示）</span></h2>
       
       <h3>【2026夏用セット 納品見本】</h3>
       <div class="media-grid">
         <div class="media-wrapper">
-          <img src="2026_06_夏用_3000_2.jpg" alt="引きの写真の見本" ondragstart="return false;">
+          <img src="2026_06_夏用_3000_2.jpg" alt="引きの写真の見本" class="clickable-media" ondragstart="return false;">
           <div class="media-label">引きの写真（全体構図）</div>
         </div>
         <div class="media-wrapper">
-          <img src="2026_06_夏用_3000_3.jpg" alt="キラキラスチルの見本" ondragstart="return false;">
+          <img src="2026_06_夏用_3000_3.jpg" alt="キラキラスチルの見本" class="clickable-media" ondragstart="return false;">
           <div class="media-label">キラキラスチル（アップ・エフェクト）</div>
         </div>
       </div>
@@ -211,11 +272,11 @@
       <h3 style="margin-top:25px;">【立ち絵加筆レタッチ（Before / After）】</h3>
       <div class="media-grid">
         <div class="media-wrapper">
-          <img src="加筆前立ち絵1.png" alt="加筆前立ち絵" ondragstart="return false;">
+          <img src="加筆前立ち絵1.png" alt="加筆前立ち絵" class="clickable-media" ondragstart="return false;">
           <div class="media-label">Before（加筆前）</div>
         </div>
         <div class="media-wrapper">
-          <img src="加筆立ち絵1.png" alt="加筆後立ち絵" ondragstart="return false;">
+          <img src="加筆立ち絵1.png" alt="加筆後立ち絵" class="clickable-media" ondragstart="return false;">
           <div class="media-label">After（加筆・レタッチ後）</div>
         </div>
       </div>
@@ -328,6 +389,14 @@
         </button>
       </div>
     </form>
+  </div>
+
+  <!-- 🔍 拡大画像用モーダル（全画面ポップアップ） -->
+  <div id="imageModal" class="modal-overlay">
+    <div class="modal-content-wrapper">
+      <span id="modalClose" class="modal-close-btn">&times;</span>
+      <img id="modalImg" src="" alt="拡大表示" ondragstart="return false;">
+    </div>
   </div>
 
   <script src="script.js"></script>
