@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VRM 撮影＆レタッチ見積もり</title>
+  <title>VRM 撮影＆レタッチ 見積もりシミュレーター</title>
   <style>
     body {
       font-family: 'Helvetica Neue', Arial, sans-serif;
@@ -12,7 +12,7 @@
       max-width: 900px;
       margin: 0 auto;
       padding: 20px;
-      background-color: #f9f9f9;
+      background-color: #f4f7f6;
     }
     .header-img {
       width: 100%;
@@ -26,14 +26,14 @@
     }
     .card {
       background: #ffffff;
-      padding: 20px;
+      padding: 25px;
       border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
       margin-bottom: 25px;
     }
     .media-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 15px;
       margin-top: 15px;
     }
@@ -41,50 +41,68 @@
       width: 100%;
       height: auto;
       border-radius: 8px;
+      background-color: #fafafa;
     }
     .label {
       font-weight: bold;
       margin-top: 8px;
       font-size: 0.9em;
       color: #555;
+      text-align: center;
+    }
+    /* 見積もりフォーム用スタイル */
+    .option-group {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin: 8px 0;
+      cursor: pointer;
+    }
+    .price-display {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #e74c3c;
+      text-align: right;
+      padding-top: 10px;
+      border-top: 2px solid #eee;
     }
   </style>
 </head>
 <body>
 
-  <!-- ヘッダー（X用4月.jpg） -->
+  <!-- ヘッダー画像 -->
   <img src="X用4月.jpg" alt="メインビジュアル" class="header-img">
 
-  <h1>VRM 撮影＆レタッチ ご案内</h1>
+  <h1>VRM 撮影＆レタッチ 概算見積もり</h1>
 
-  <!-- ビフォーアフター動画エリア -->
+  <!-- 簡単見積もりシミュレーター -->
   <div class="card">
-    <h2>クオリティ変化（Before / After）</h2>
-    <p>ライティングやエフェクト加工による仕上がりの違いをご確認いただけます。</p>
-    <div class="media-grid">
-      <div>
-        <!-- 1つ目のビフォーアフター動画 -->
-        <video controls autoplay loop muted playsinline>
-          <source src="before_after_1.mp4" type="video/mp4">
-          お使いのブラウザは動画再生に対応していません。
-        </video>
-        <div class="label">ビフォーアフター 例1</div>
+    <h2>💰 お見積もりシミュレーター</h2>
+    <p>ご希望の項目を選択してください。概算料金がリアルタイムで計算されます。</p>
+    
+    <form id="estimate-form">
+      <div class="option-group">
+        <h3>1. 基本撮影パック</h3>
+        <label><input type="radio" name="base" value="5000" checked onclick="calculateTotal()"> 2026夏用 基本セット（引き写真＋キラキラスチル） - ¥5,000</label>
       </div>
-      <div>
-        <!-- 2つ目のビフォーアフター動画 -->
-        <video controls autoplay loop muted playsinline>
-          <source src="before_after_2.mp4" type="video/mp4">
-          お使いのブラウザは動画再生に対応していません。
-        </video>
-        <div class="label">ビフォーアフター 例2</div>
+
+      <div class="option-group">
+        <h3>2. オプション追加</h3>
+        <label><input type="checkbox" name="option" value="2000" onclick="calculateTotal()"> 立ち絵加筆・加飾レタッチ追加 - ¥2,000</label>
+        <label><input type="checkbox" name="option" value="3000" onclick="calculateTotal()"> 特殊エフェクト動画加工 - ¥3,000</label>
+        <label><input type="checkbox" name="option" value="1500" onclick="calculateTotal()"> 表情・ポーズ差分（1種につき） - ¥1,500</label>
       </div>
-    </div>
+
+      <div class="price-display">
+        概算合計: <span id="total-price">¥5,000</span>
+      </div>
+    </form>
   </div>
 
-  <!-- 2026夏用セットの見本 -->
+  <!-- サンプルギャラリー -->
   <div class="card">
-    <h2>2026夏用セット 納品見本</h2>
-    <p>「引きの写真」と「キラキラスチル」のサンプルイメージです。</p>
+    <h2>🖼 2026夏用セット 納品見本</h2>
     <div class="media-grid">
       <div>
         <img src="2026_06_夏用_3000_2.jpg" alt="引きの写真の見本">
@@ -92,10 +110,72 @@
       </div>
       <div>
         <img src="2026_06_夏用_3000_3.jpg" alt="キラキラスチルの見本">
-        <div class="label">キラキラスチル（アップ・エフェクト強調）</div>
+        <div class="label">キラキラスチル（アップ・エフェクト）</div>
       </div>
     </div>
   </div>
+
+  <!-- 立ち絵レタッチのビフォーアフター -->
+  <div class="card">
+    <h2>✨ 立ち絵加筆レタッチ（Before / After）</h2>
+    <p>背景なしの立ち絵に対する陰影・加筆・光のレタッチ効果です。</p>
+    <div class="media-grid">
+      <div>
+        <img src="加筆前立ち絵1.png" alt="加筆前立ち絵">
+        <div class="label">Before（加筆前）</div>
+      </div>
+      <div>
+        <img src="加筆立ち絵1.png" alt="加筆後立ち絵">
+        <div class="label">After（加筆・レタッチ後）</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 動画ビフォーアフター -->
+  <div class="card">
+    <h2>🎬 動画エフェクト変化（Before / After）</h2>
+    <div class="media-grid">
+      <div>
+        <video controls autoplay loop muted playsinline>
+          <source src="before_after_1.mp4" type="video/mp4">
+          お使いのブラウザは動画再生に対応していません。
+        </video>
+        <div class="label">演出動画サンプル 1</div>
+      </div>
+      <div>
+        <video controls autoplay loop muted playsinline>
+          <source src="before_after_2.mp4" type="video/mp4">
+          お使いのブラウザは動画再生に対応していません。
+        </video>
+        <div class="label">演出動画サンプル 2</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function calculateTotal() {
+      let total = 0;
+      
+      // 基本料金のラジオボタン
+      const baseOptions = document.getElementsByName('base');
+      for (const opt of baseOptions) {
+        if (opt.checked) {
+          total += parseInt(opt.value);
+        }
+      }
+
+      // オプションのチェックボックス
+      const optionBoxes = document.getElementsByName('option');
+      for (const box of optionBoxes) {
+        if (box.checked) {
+          total += parseInt(box.value);
+        }
+      }
+
+      // 合計表示を更新
+      document.getElementById('total-price').innerText = '¥' + total.toLocaleString();
+    }
+  </script>
 
 </body>
 </html>
