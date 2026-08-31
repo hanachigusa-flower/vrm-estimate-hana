@@ -1,3 +1,4 @@
+// 金額の計算と税込表示の自動計算関数
 function calculateTotal() {
   let total = 0;
 
@@ -19,7 +20,7 @@ function calculateTotal() {
     total += parseInt(express.value, 10) || 0;
   }
 
-  // 4. 追加キャラ人数の計算
+  // 4. 追加キャラ人数の計算 (1人につき 2,500円)
   const charCount = document.getElementById('charCount');
   if (charCount) {
     const count = parseInt(charCount.value, 10) || 0;
@@ -40,23 +41,23 @@ function calculateTotal() {
   }
 }
 
-// 画面読み込み後の処理
+// 画面読み込み完了後にイベントを設定
 document.addEventListener('DOMContentLoaded', function() {
   const form = document.getElementById('estimateForm');
   if (form) {
-    // フォーム全体の変更をすべてキャッチして再計算
+    // フォーム内のクリック・入力・変更をすべて検知して再計算
     form.addEventListener('change', calculateTotal);
     form.addEventListener('input', calculateTotal);
     form.addEventListener('click', calculateTotal);
   }
 
-  // メール作成ボタンの処理
+  // メール作成ボタンの処理（Web版Gmailを起動）
   const sendEmailBtn = document.getElementById('sendEmailBtn');
   if (sendEmailBtn) {
     sendEmailBtn.addEventListener('click', function(e) {
       e.preventDefault();
 
-      // ✉️ 千草はな様のメールアドレスを設定してください
+      // ✉️ ご自身のメールアドレスを設定してください
       const yourEmail = "your-email@example.com"; 
 
       const priceEx = document.getElementById('totalPrice') ? document.getElementById('totalPrice').innerText : "0";
@@ -92,10 +93,14 @@ document.addEventListener('DOMContentLoaded', function() {
         `【ご要望・補足など】\n` +
         `（ここにポージングのご希望や気になる点をご記入ください）\n`;
 
-      window.location.href = `mailto:${yourEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      // Web版Gmail作成画面のURLを生成
+      const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(yourEmail)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+      // 新しいタブでGmail作成画面を開く
+      window.open(gmailUrl, '_blank');
     });
   }
 
-  // 初期計算
+  // 初期計算の実行
   calculateTotal();
 });
