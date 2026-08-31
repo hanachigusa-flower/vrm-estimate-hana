@@ -139,9 +139,10 @@ h3 {
 .btn-link.twitter { background-color: #1da1f2; }
 .btn-link:hover { opacity: 0.85; transform: translateY(-2px); }
 
+/* 🌟 ここを2列（2つずつ並ぶ）に変更しました 🌟 */
 .media-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 12px;
 }
 .media-wrapper {
@@ -149,6 +150,11 @@ h3 {
   overflow: hidden;
   background-color: #fff;
   border: 1px solid #ffe5eb;
+  display: flex;
+  flex-direction: column;
+}
+.media-wrapper .media-container {
+  flex: 1;
 }
 .media-label {
   font-weight: bold;
@@ -158,6 +164,17 @@ h3 {
   text-align: center;
   background: #fff;
   border-top: 1px solid #ffe5eb;
+}
+
+/* スマホ等で画面幅が狭い時もきれいに収まる調整 */
+@media (max-width: 480px) {
+  .media-grid {
+    gap: 8px;
+  }
+  .media-label {
+    font-size: 0.75rem;
+    padding: 4px 0;
+  }
 }
 
 /* --- 🎁 特典＆お知らせ --- */
