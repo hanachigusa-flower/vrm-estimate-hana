@@ -144,7 +144,7 @@
       </div>
     </div>
 
-    <!-- 🌟 3つ目のブロック：特典＆お知らせ -->
+    <!-- 🌟 3つ目のブロック：特典案内＆ご注意事項 -->
     <div class="section-with-gif">
       <div class="gif-side gif-left">
         <img src="はなぬい_ゆらゆらウインクループ.gif" alt="装飾GIF" class="protected-media">
@@ -157,6 +157,7 @@
           <h2>特典案内＆ご注意事項</h2>
         </div>
 
+        <!-- 1. ご利用特典 -->
         <div class="info-box benefit-box">
           <h3>🎁 ご利用特典</h3>
           <p><strong>リピーター様</strong> または <strong>SNS等で宣伝いただいた方</strong> には特典をお付けしています！</p>
@@ -166,9 +167,26 @@
           </ul>
         </div>
 
+        <!-- 2. お持ち込み素材・公開について -->
+        <div class="info-box material-box">
+          <h3>📁 お持ち込み素材・実績公開について</h3>
+          <ul>
+            <li><strong>背景のご用意：</strong>利用規約をご確認のうえ、元のサイトがあればそちらのURLを貼ってください。（AI背景・リアル写真も可）<br>
+            <span class="sub-note">※4Kサイズ以下のものは若干画質が落ちる場合があります。できる限り綺麗にしてお渡しいたしますがご了承ください。</span></li>
+            <li><strong>VRChatのお写真：</strong>編集ご希望の方は「キャラクター有り」と「無し（背景のみ）」に分けて撮影いただけると幸いです。</li>
+            <li><strong>ポートフォリオ公開：</strong>実績非公開の方や、FANBOX・メンバーシップ限定等で掲載できない方は、事前にご相談いただくかオプションの「実績非公開」をお選びください。</li>
+          </ul>
+        </div>
+
+        <!-- 3. 修正・リテイクについて -->
         <div class="info-box caution-box">
-          <h3>🔒 ポートフォリオ公開について</h3>
-          <p>※ポートフォリオ非公開希望の方は「実績非公開」をご選択ください。</p>
+          <h3>⚠️ 修正・リテイクに関する注意事項</h3>
+          <ul>
+            <li><strong>修正のご連絡：</strong>ラフお渡しから<strong>4営業日以内</strong>にご指定ください。過ぎた場合は納期の延長や追加料金がかかる場合がございます。</li>
+            <li><strong>おまかせプラン：</strong>基本イメージとあまりに乖離がある場合を除き、リテイクは承っておりません。とことんこだわりたい方は「完全こだわりセット」をお勧めいたします！</li>
+            <li><strong>リテイク料金：</strong>1回 1,000円（最大5回まで対応）<br>
+            <span class="sub-note">※ラフOK（確定）提出後のポージングや表情リテイクは 1回 2,000円 かかります。</span></li>
+          </ul>
         </div>
       </section>
 
@@ -178,7 +196,7 @@
       </div>
     </div>
 
-    <!-- 📋 4つ目のブロック：お取引の流れ（参考用） -->
+    <!-- 📋 4つ目のブロック：お取引の流れ -->
     <div class="section-with-gif">
       <div class="gif-side gif-left">
         <img src="1.gif" alt="装飾GIF" class="protected-media">
@@ -211,7 +229,7 @@
       </div>
     </div>
 
-    <!-- 📝 5つ目のブロック：ご依頼お見積もりシミュレーター（フォーム統合版） -->
+    <!-- 📝 5つ目のブロック：ご依頼お見積もりシミュレーター -->
     <div class="section-with-gif">
       <div class="gif-side gif-left">
         <img src="はなぬい_ゆらゆらウインクループ.gif" alt="装飾GIF" class="protected-media">
@@ -226,7 +244,7 @@
 
         <form id="estimateForm">
           
-          <!-- ご依頼テンプレート基本項目 -->
+          <!-- 基本情報 -->
           <div class="form-group">
             <h3>📌 基本情報のご入力</h3>
             
@@ -275,11 +293,6 @@
           <!-- 1. メインセット選択 -->
           <div class="form-group">
             <h3>1. メインセット選択（いずれか1つ）</h3>
-            
-            <div class="set-notice-box">
-              ⚠️ <strong>実績非公開・限定公開について</strong><br>
-              実績非公開のほか、FANBOXやメンバーシップ限定などポートフォリオに掲載できない場合も、事前にご相談いただくかオプションの「実績非公開」をお選びください。
-            </div>
 
             <div class="radio-group card-radio-group">
               <label class="set-card">
@@ -350,7 +363,7 @@
             </div>
           </div>
 
-          <!-- 🔗 セットに応じた詳細入力欄（自動切り替え） -->
+          <!-- 連動型サブボックス -->
           <div class="form-group dynamic-detail-section">
             <h3>📌 選択したセットの詳細ご要望</h3>
 
@@ -369,7 +382,6 @@
                 <label>表情1点 ＋ 差分</label>
                 <input type="text" id="sub_face1" placeholder="ご希望の表情（例：笑顔、ウインク等）" class="text-input">
               </div>
-              <p class="note-small">※AI背景可、リアル写真可。4Kサイズ以下のものは若干画質が落ちる場合があります。</p>
             </div>
 
             <!-- ② 季節・シチュエーションおまかせセット用 -->
@@ -392,7 +404,6 @@
                 <label>表情1点 ＋ 表情差分1点</label>
                 <input type="text" id="sub_face2" placeholder="ご希望の表情（例：通常、照れ顔 等）" class="text-input">
               </div>
-              <p class="note-small">※ご指定のシチュエーションによりAI画像を使用する場合があります。</p>
             </div>
 
             <!-- ③ 全部持ち込みお写真馴染ませセット用 -->
@@ -422,8 +433,6 @@
                   <label><input type="radio" name="sub_vrc_user" value="活動者様以外"> 活動者様以外（※全額前払いとなります）</label>
                 </div>
               </div>
-              <p class="note-small"><strong>ーご用意いただくものー</strong><br>
-              ・背景、人物一緒のお写真 / ・背景だけのお写真 / ・人物(透過)だけのお写真</p>
             </div>
 
             <!-- ⑤ 完全こだわりセット / セットなし用 -->
