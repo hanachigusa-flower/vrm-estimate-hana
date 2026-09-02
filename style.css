@@ -210,18 +210,22 @@ h3 {
   }
 }
 
-/* --- 🎁 特典＆お知らせ --- */
+/* --- 🎁 特典＆ご注意事項カードのデザイン --- */
 .info-box {
-  padding: 15px;
-  border-radius: 10px;
-  margin-bottom: 12px;
+  padding: 16px 18px;
+  border-radius: 12px;
+  margin-bottom: 14px;
 }
 .info-box:last-child {
   margin-bottom: 0;
 }
 .info-box h3 {
   margin-top: 0;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 .info-box p {
   font-size: 0.88rem;
@@ -229,18 +233,50 @@ h3 {
 }
 .info-box ul {
   margin: 0;
-  padding-left: 20px;
+  padding-left: 18px;
   font-size: 0.85rem;
-  color: #555;
+  color: #444;
+  line-height: 1.6;
+}
+.info-box li {
+  margin-bottom: 8px;
+}
+.info-box li:last-child {
+  margin-bottom: 0;
 }
 
+/* ご利用特典 */
 .benefit-box {
-  background-color: #fffafb;
+  background-color: #fff9fa;
   border: 1.5px dashed #ffb6c1;
 }
+.benefit-box h3 {
+  color: #d64550;
+}
+
+/* お持ち込み素材 */
+.material-box {
+  background-color: #f7f9ff;
+  border: 1.5px solid #d0e1ff;
+}
+.material-box h3 {
+  color: #3b71ca;
+}
+
+/* 修正・注意事項 */
 .caution-box {
-  background-color: #f9f9f9;
-  border: 1px solid #eee;
+  background-color: #fffaf0;
+  border: 1.5px solid #ffe0b2;
+}
+.caution-box h3 {
+  color: #e67e22;
+}
+
+.sub-note {
+  font-size: 0.78rem;
+  color: #777;
+  display: block;
+  margin-top: 2px;
 }
 
 /* --- 📋 お取引の流れ --- */
@@ -318,7 +354,6 @@ h3 {
   transform: scale(1.1);
 }
 
-/* 🔗 連動する詳細サブボックス */
 .dynamic-detail-section {
   background: #faf7f8;
   border: 1.5px dashed #ffd1dc;
@@ -332,12 +367,6 @@ h3 {
   margin: 0 0 10px 0;
   border-bottom: 1px dashed #ffa8b6;
   padding-bottom: 4px;
-}
-.note-small {
-  font-size: 0.78rem;
-  color: #777;
-  margin-top: 6px;
-  line-height: 1.4;
 }
 
 .radio-group, .checkbox-group {
@@ -481,17 +510,6 @@ select, input[type="number"] {
 }
 
 /* --- 💖 メインセット＆カードデザイン 💖 --- */
-.set-notice-box {
-  background-color: #fff8f9;
-  border: 1px dashed #ff8fa3;
-  border-radius: 10px;
-  padding: 12px 14px;
-  font-size: 0.85rem;
-  color: #555;
-  line-height: 1.5;
-  margin-bottom: 15px;
-}
-
 .common-deliverables-box {
   background: #fff0f3;
   border: 2px solid #ffb6c1;
